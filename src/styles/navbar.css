@@ -1,0 +1,195 @@
+@import url("root.css");
+
+/* Styles  */
+.navbar {
+    padding: 1rem 0.5rem 1rem 1rem;
+    color: var(--secondaryColor);
+    position: sticky;
+    top: 0;
+    max-width: 100vw;
+    z-index: 100;
+    background-color: var(--primaryBackground);
+    box-shadow: 2px 2px 5px var(--secondaryBackground);
+
+    h1 {
+        color: var(--primaryColor);
+    }
+    .nav-menu {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+
+        .nav-menuIcon {
+            fill: var(--secondaryColor);
+        }
+    }
+
+    .nav-menu:hover {
+        background-color: var(--primaryColor);
+    }
+}
+
+.navbar-scrolled {
+    box-shadow: 1px 1px 5px var(--secondaryBackground);
+}
+.nav-drawer {
+    position: absolute;
+    width: 90%;
+    height: 100vh;
+    top: -100vh;
+    right: 0;
+    background-color: var(--secondaryBackground);
+    transition: all 0.5s ease-out;
+    padding: 2rem 1rem 15vh 1rem;
+}
+
+.nav-drawer-closeBtn {
+    width: 100%;
+    text-align: right;
+}
+
+.nav-drawer-closeBtn:hover {
+    transform: scale(1.1);
+}
+
+.nav-drawer-links {
+    width: 80%;
+    margin: auto;
+    height: 40%;
+
+    .link {
+        color: var(--secondaryColor);
+        text-decoration: none;
+        font-size: large;
+        font-weight: 600;
+    }
+    .link:hover {
+        color: var(--primaryColor);
+        /* transform: scale(1.05); */
+    }
+}
+
+.nav-drawer-themeSelecter {
+    width: 100%;
+    padding: 0.4rem;
+
+    h3 {
+        font-weight: normal;
+        font-size: 1.3rem;
+        padding: 0.9rem 0.3rem;
+        color: var(--primaryColor);
+    }
+
+    .radio-group {
+        width: 100%;
+        margin: auto;
+
+        .radio-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondaryColor);
+
+            input {
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+.nav-links,
+.nav-btns {
+    display: none;
+}
+
+/* .nav-links {
+    border: 1px solid yellow;
+}
+.nav-btns {
+    border: 1px solid red;
+} */
+.nav-blog-btn {
+    background-color: var(--primaryBackground);
+    border: 2px solid var(--primaryColor);
+    color: var(--primaryColor);
+    font-size: normal;
+}
+.nav-blog-btn:hover {
+    background-color: var(--primaryColor);
+    color: var(--primaryBackground);
+}
+
+.nav-themeSelectBtn {
+    background-color: var(--hyugaPrimary);
+    border: 1px solid var(--hyugaPrimary);
+    outline: none;
+    appearance: none;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+
+    option {
+        background-color: var(--secondaryBackground);
+        color: var(--secondaryColor);
+        padding: 0.6rem;
+    }
+}
+.nav-themeSelectBtn:hover {
+    background-color: var(--primaryBackground);
+    color: var(--hyugaPrimary);
+}
+
+/* Styles related to theme */
+/********** Default ***********/
+/********** Dark ***********/
+/********** Light ***********/
+
+/* media queries */
+@media screen and (min-width: 568px) {
+    .navbar {
+        padding: 1rem 1.5rem 1rem 2rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    .nav-drawer {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-drawer {
+        display: none;
+    }
+    .nav-menu {
+        display: none;
+    }
+
+    .navbar {
+        padding: 1rem 3rem;
+        h1 {
+            width: 35%;
+        }
+        .nav-btns {
+            width: 35%;
+        }
+    }
+    .nav-drawer-links {
+        width: 30%;
+        height: auto;
+
+        .link {
+            font-weight: 300;
+        }
+    }
+    .nav-links,
+    .nav-btns {
+        display: flex;
+    }
+
+    .navbar-scrolled {
+        .nav-drawer-links {
+            .link {
+                font-size: 1.15rem;
+            }
+        }
+    }
+}

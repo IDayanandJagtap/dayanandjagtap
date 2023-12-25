@@ -1,0 +1,60 @@
+:root {
+    --primaryColor: #fc4f00;
+    --secondaryColor: #f1f1f1;
+    --primaryBackground: #1e1e1e;
+    --secondaryBackground: #111;
+
+    --hyugaPrimary: #a020f0;
+    --hyugaSecondary: #111;
+    --hyugaBackground: #fafafa;
+
+    --uchihaPrimary: #ff0000;
+    --uchihaSecondary: #fff;
+    --uchihaBackground: #000;
+
+    --commonShadow: #1e1e1e;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: end;
+}
+
+.align-center {
+    align-items: center;
+}
+.align-start {
+    align-items: start;
+}
+
+.btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 24px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
