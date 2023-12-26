@@ -35,12 +35,13 @@
 .nav-drawer {
     position: absolute;
     width: 90%;
-    height: 100vh;
+    height: 100dvh;
     top: -100vh;
     right: 0;
     background-color: var(--secondaryBackground);
     transition: all 0.5s ease-out;
-    padding: 2rem 1rem 15vh 1rem;
+    /* padding: 2rem 1rem 15vh 1rem; */
+    padding: 2rem;
 }
 
 .nav-drawer-closeBtn {

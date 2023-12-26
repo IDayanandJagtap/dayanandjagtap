@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/About";
 import Home from "@/components/Home";
 import { Navbar } from "@/components/header/Navbar";
 import { useState } from "react";
@@ -34,7 +35,8 @@ export default function Page() {
         <>
             <Navbar updateTheme={updateTheme} theme={theme} />
             <Home />
-            <div style={{ height: "1366px" }}></div>
+            <About theme={theme} />
+            <div style={{ height: "400px" }}></div>
         </>
     );
 }
