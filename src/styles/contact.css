@@ -1,0 +1,174 @@
+@import url("root.css");
+
+#contact {
+    margin-top: 1rem;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 1rem;
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 1rem 0 1.5rem 0;
+        border-left: 4px solid var(--primaryColor);
+        padding: 1rem;
+        color: var(--secondaryColor);
+    }
+
+    .contact-form {
+        margin-top: 3rem;
+        form {
+            width: 95%;
+            margin: auto;
+            background-color: var(--secondaryBackground);
+            gap: 0.8rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            box-shadow: 3px 3px 8px var(--commonShadow);
+
+            input,
+            textarea {
+                outline: none;
+                background-color: var(--secondaryBackground);
+                border: none;
+                padding: 0.5rem;
+                color: var(--secondaryColor);
+            }
+
+            input {
+                border-bottom: 1px solid var(--tertiaryColor);
+            }
+
+            button {
+                color: var(--secondaryBackground);
+                background-color: var(--primaryColor);
+                width: fit-content;
+                border: 1px solid var(--primaryColor);
+                /* align the button at the end */
+                margin: 0.5rem 0.5rem 0.5rem auto;
+                font-weight: bold;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+
+    .contact-links {
+        padding: 2rem 0;
+        margin-top: 1rem;
+        h3 {
+            color: var(--secondaryColor);
+        }
+
+        div {
+            width: 80%;
+            margin: 2rem auto;
+            justify-content: space-between;
+            align-items: center;
+
+            .c-link {
+                margin: 0 1rem;
+                transition: all 0.2s linear;
+                cursor: pointer;
+
+                svg {
+                    /* transform: scale(1); */
+                    fill: var(--secondaryColor);
+                    animation: pump 0.9s ease-in-out infinite alternate;
+                }
+
+                span {
+                    display: none;
+                    color: var(--secondaryColor);
+                }
+                span:hover {
+                    color: var(--primaryColor);
+                }
+            }
+            .c-link:hover {
+                transform: scale(1.1);
+            }
+
+            :nth-child(2) {
+                svg {
+                    animation-delay: 0.5s;
+                }
+            }
+            :nth-child(3) {
+                svg {
+                    animation-delay: 1s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pump {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transfrom: scale(1);
+    }
+}
+
+@media screen and (min-width: 668px) {
+    #contact {
+        .contact-links {
+            div {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #contact {
+        h1 {
+            text-align: end;
+            border: none;
+            border-right: 5px solid var(--primaryColor);
+            margin-right: 2rem;
+        }
+        div {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+        }
+
+        .contact-form {
+            width: 60%;
+
+            form {
+                width: 80%;
+            }
+        }
+        .contact-links {
+            width: 40%;
+
+            div {
+                margin: 0;
+                padding: 2rem;
+                width: 100%;
+                height: 100%;
+
+                flex-direction: column;
+                gap: 2rem;
+                align-items: flex-start;
+                justify-content: center;
+
+                .c-link {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 0.7rem;
+                    text-decoration: none;
+
+                    span {
+                        display: inline-block;
+                        text-decoration: none;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
