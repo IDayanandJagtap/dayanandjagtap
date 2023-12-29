@@ -2,6 +2,7 @@
 
 import About from "@/components/About";
 import Home from "@/components/Home";
+import ProjectSection from "@/components/ProjectSection";
 import { Navbar } from "@/components/header/Navbar";
 import { useState } from "react";
 
@@ -36,6 +37,7 @@ export default function Page() {
             <Navbar updateTheme={updateTheme} theme={theme} />
             <Home />
             <About theme={theme} />
+            <ProjectSection />
             <div style={{ height: "400px" }}></div>
         </>
     );
