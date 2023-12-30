@@ -11,8 +11,6 @@ export const Home = () => {
                         sequence={[
                             "Dayanand !",
                             1000,
-                            "a Programmer !",
-                            1000,
                             "a Developer !",
                             1000,
                             "a Full Stack Engineer !",

@@ -1,11 +1,10 @@
 // Font :
-import { Inter, Ubuntu } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "../styles/global.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const ubuntu = Ubuntu({
-    subsets: ["latin", "cyrillic-ext"],
-    weight: ["300", "400"],
+    weight: ["300", "400", "500"],
+    subsets: ["cyrillic", "latin"],
 });
 
 export const metadata = {

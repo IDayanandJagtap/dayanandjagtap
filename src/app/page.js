@@ -44,7 +44,6 @@ export default function Page() {
             <ProjectSection />
             <Contact />
             <Footer />
-            {/* <div style={{ height: "400px" }}></div> */}
         </>
     );
 }
