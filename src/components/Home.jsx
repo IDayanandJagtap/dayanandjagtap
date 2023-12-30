@@ -3,17 +3,19 @@ import "@/styles/home.css";
 import { TypeAnimation } from "react-type-animation";
 export const Home = () => {
     return (
-        <div className="home flex align-center">
+        <div className="home flex align-center" id="home">
             <section className="home-textHolder flex flex-col ">
                 <h1>Hello, I&apos;m </h1>
                 <p className="text-gradient-wrapper">
                     <TypeAnimation
                         sequence={[
+                            "Dayanand !",
+                            1000,
                             "a Programmer !",
                             1000,
                             "a Developer !",
                             1000,
-                            "a Developer !",
+                            "a Full Stack Engineer !",
                             1000,
                         ]}
                         repeat={Infinity}

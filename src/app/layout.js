@@ -9,8 +9,9 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata = {
-    title: "Your name",
-    description: "Web developer | Front-end | Back-end",
+    title: "Dayanand Jagtap",
+    description:
+        "Web developer | Front-end | Back-end | Developer | Programmer",
 };
 
 export default function RootLayout({ children }) {

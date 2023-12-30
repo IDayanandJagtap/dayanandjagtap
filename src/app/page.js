@@ -2,6 +2,7 @@
 
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import ProjectSection from "@/components/ProjectSection";
 import { Navbar } from "@/components/header/Navbar";
@@ -42,7 +43,8 @@ export default function Page() {
             <About theme={theme} />
             <ProjectSection />
             <Contact />
-            <div style={{ height: "400px" }}></div>
+            <Footer />
+            {/* <div style={{ height: "400px" }}></div> */}
         </>
     );
 }

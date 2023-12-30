@@ -1,0 +1,25 @@
+@import url("root.css");
+
+#footer {
+    margin-top: -10vh;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    border-top: 0.3px solid var(--secondaryBackground);
+    background-color: var(--secondaryBackground);
+
+    h3 {
+        color: var(--primaryColor);
+    }
+
+    p {
+        color: var(--tertiaryColor);
+    }
+
+    a {
+        background-color: var(--primaryColor);
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: none;
+        color: var(--secondaryColor);
+    }
+}

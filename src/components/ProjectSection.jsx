@@ -6,7 +6,7 @@ const miscProjects = [
     {
         title: "Pdf-Manager",
         description:
-            "A simple project to handle pdf's build using technologies like Node.js, express.js, ejs",
+            "A project to handle pdf's build using technologies like Node.js, express.js, ejs",
         imageUrl: "/project/pdf-manager-preview.png",
         projectLink: "https://github.com/IDayanandJagtap/Pdf---Manager",
         websiteLink: null,

@@ -10,7 +10,7 @@ import { Ubuntu } from "next/font/google";
 const ubuntu = Ubuntu({ subsets: ["latin", "cyrillic-ext"], weight: "400" });
 const navList = [
     {
-        link: "/#",
+        link: "#home",
         name: "Home",
     },
     {
