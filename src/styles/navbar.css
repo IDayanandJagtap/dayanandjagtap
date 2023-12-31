@@ -7,12 +7,18 @@
     position: sticky;
     top: 0;
     max-width: 100vw;
+    height: 70px;
     z-index: 100;
     background-color: var(--primaryBackground);
     box-shadow: 2px 2px 5px var(--secondaryBackground);
-
+    a {
+        text-decoration: none;
+        display: block;
+    }
     h1 {
         color: var(--primaryColor);
+        font-size: 36px;
+        font-weight: bolder;
     }
     .nav-menu {
         border-radius: 50%;
@@ -61,12 +67,11 @@
     .link {
         color: var(--secondaryColor);
         text-decoration: none;
-        font-size: large;
+        font-size: 18px;
         font-weight: 600;
     }
     .link:hover {
         color: var(--primaryColor);
-        /* transform: scale(1.05); */
     }
 }
 
@@ -103,17 +108,11 @@
     display: none;
 }
 
-/* .nav-links {
-    border: 1px solid yellow;
-}
-.nav-btns {
-    border: 1px solid red;
-} */
 .nav-blog-btn {
     background-color: var(--primaryBackground);
     border: 2px solid var(--primaryColor);
     color: var(--primaryColor);
-    font-size: normal;
+    font-size: 12px;
 }
 .nav-blog-btn:hover {
     background-color: var(--primaryColor);
@@ -127,6 +126,7 @@
     appearance: none;
     width: fit-content;
     padding: 0.6rem 1.2rem;
+    font-size: 12px;
 
     option {
         background-color: var(--secondaryBackground);
@@ -138,11 +138,6 @@
     background-color: var(--primaryBackground);
     color: var(--hyugaPrimary);
 }
-
-/* Styles related to theme */
-/********** Default ***********/
-/********** Dark ***********/
-/********** Light ***********/
 
 /* media queries */
 @media screen and (min-width: 568px) {

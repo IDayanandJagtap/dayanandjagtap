@@ -15,13 +15,12 @@
 body {
     background-color: var(--primaryBackground);
     max-width: 100vw;
-    /* overflow: hidden; */
 }
 
 #toast {
     color: #000;
     position: fixed;
-    top: 5rem;
+    top: 80px;
     max-width: fit-content;
     height: fit-content;
     padding: 0.5rem 1rem;
@@ -41,25 +40,3 @@ body {
     background-color: #f4615e;
     border: 1px solid red;
 }
-
-/****************** Default Dark (Naruto) theme *******************/
-/* .naruto {
-    background-color: var(--narutoBackground);
-} */
-/****************** Light (Hyuga) theme *******************/
-/* .hyuga {
-    background-color: var(--hyugaBackground);
-} */
-/****************** Itachi Uchiha theme *******************/
-/* .uchiha {
-    background-color: #000;
-
-    div {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid red;
-    }
-} */

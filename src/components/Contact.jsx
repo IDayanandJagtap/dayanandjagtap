@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { sendMail } from "../../lib/emailJs";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Toast from "./Toast";
 
 const Contact = () => {
@@ -49,9 +49,8 @@ const Contact = () => {
 
             showToast(msg, "success");
         } catch (e) {
-            const msg = "Oops something went wrong ! 😔";
             showToast(e.message, "error");
-            console.log(e);
+            // console.log(e);
         } finally {
             document.body.style.cursor = "default";
         }
@@ -80,7 +79,7 @@ const Contact = () => {
                         <textarea
                             name="msg"
                             id=""
-                            rows={5}
+                            rows={10}
                             placeholder="Just saying hii !"
                             onChange={handleOnInputChange}
                         />

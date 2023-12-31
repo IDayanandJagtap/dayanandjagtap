@@ -1,16 +1,16 @@
 @import url("root.css");
 
 .project {
-    margin-top: 1rem;
+    margin-top: 80px;
     min-height: 100vh;
     height: fit-content;
     padding: 1rem;
     h1 {
-        font-size: 1.8rem;
+        font-size: 30px;
         font-weight: 600;
         margin: 1rem 0 1.5rem 0;
         border-left: 4px solid var(--primaryColor);
-        padding: 1rem;
+        padding: 0.6rem 1rem;
         color: var(--secondaryColor);
     }
 
@@ -38,7 +38,6 @@
     }
 
     .project-content {
-        /* border: 1px solid yellow; */
         margin-top: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
@@ -52,7 +51,6 @@
 
         .content-card {
             border: 1px solid var(--secondaryBackground);
-            /* box-shadow: 2px 2px 3px var(--primaryColor); */
             border-radius: 6px;
             transition: transform 0.2s linear;
             position: relative;
@@ -72,14 +70,14 @@
                 border-radius: 0 0 6px 6px;
 
                 h3 {
-                    font-size: 1rem;
+                    font-size: 16px;
                     font-weight: bold;
                     color: var(--secondaryColor);
                 }
                 p {
                     margin-top: 0.5rem;
-                    letter-spacing: 1px;
-                    font-size: 0.6rem;
+                    letter-spacing: 0.5px;
+                    font-size: 12px;
                     color: var(--secondaryColor);
                 }
             }
@@ -118,7 +116,6 @@
         .content-card:hover {
             transform: scale(1.05);
             .content-cardLink {
-                /* display: flex; */
                 opacity: 0.8;
             }
         }
@@ -141,6 +138,9 @@
     .project {
         padding: 3rem;
         margin-top: 5vh;
+        h1 {
+            margin: 1rem 0 1.5rem 2rem;
+        }
     }
     .project-content {
         width: 80%;

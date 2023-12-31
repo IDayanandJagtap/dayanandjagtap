@@ -34,7 +34,6 @@ export const Navbar = ({ theme, updateTheme }) => {
         const navDrawer = document.getElementsByClassName("nav-drawer")[0];
         if (!isNavOpen) {
             setIsNavOpen(1);
-            // navDrawer.style.right = 0;
             navDrawer.style.top = 0;
         }
     };
@@ -43,7 +42,6 @@ export const Navbar = ({ theme, updateTheme }) => {
         if (isNavOpen) {
             setIsNavOpen(0);
             navDrawer.style.top = "-200vh";
-            // navDrawer.style.right = "-200%";
         }
     };
 
@@ -54,7 +52,7 @@ export const Navbar = ({ theme, updateTheme }) => {
 
     return (
         <nav className={"navbar flex justify-between align-center"}>
-            <h1>Name</h1>
+            <h1>DJ</h1>
             {/* for small screens */}
             <NavDrawer
                 handleNavOnClose={handleNavOnClose}

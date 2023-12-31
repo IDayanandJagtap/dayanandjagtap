@@ -9,11 +9,11 @@ export const Home = () => {
                 <p className="text-gradient-wrapper">
                     <TypeAnimation
                         sequence={[
-                            "Dayanand !",
+                            "Dayanand.",
                             1000,
                             "a Developer !",
                             1000,
-                            "a Full Stack Engineer !",
+                            "a Full Stack Engineer",
                             1000,
                         ]}
                         repeat={Infinity}
@@ -22,9 +22,7 @@ export const Home = () => {
                     />
                 </p>
                 <p className="home-description">
-                    A passionate web developer riding the MERN wave! 👨‍💻✨ Ready
-                    to turn digital dreams into reality. Scroll down to see my
-                    coding odyssey!
+                    Let&apos;s build something great together 😉✨
                 </p>
             </section>
 

@@ -24,14 +24,26 @@ const About = ({ theme }) => {
                 <section className="about-text-header">
                     <h1>About me :</h1>
                     <p>
-                        Peek behind the code! Im not just a developer; Im a tech
-                        enthusiast on a mission. My journey? From curious coder
-                        to creating dynamic web experiences. Lets build
-                        something extraordinary together! Skills: Diving deep
-                        into the tech ocean with skills like React for sleek
-                        interfaces, Node.js for powerful backends, and MongoDB
-                        for data magic. My toolkit is a blend of precision and
-                        creativity.{" "}
+                        Hii, &nbsp;My name is Dayanand Jagtap, a developer. I
+                        love many things and programming is one of them.{" "}
+                        <br></br>I love to be called a &nbsp;
+                        <i>Problem solver</i> &nbsp; rather than a programmer or
+                        a coder or any fancy name!
+                        <br />
+                        <br />
+                        I am interested in solving problems and developing
+                        solutions be it in any field, framework or language.
+                        <br />
+                        The only thing you need to know about me is &nbsp;
+                        &quot; If you got an idea, I&apos;ll make it real .
+                        &quot;&nbsp; that&apos;s all.
+                        <br />
+                        <br />
+                        Currently I&apos;m mastering mern stack with all the
+                        necessary libraries and NextJs as well.
+                        <br />
+                        Also trying to cook some basic DSA problems😉.
+                        <br />
                     </p>
                     {/* Switching */}
                     <div className="about-buttonGroup">

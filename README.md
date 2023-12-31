@@ -1,5 +1,8 @@
 ### Portfolio - Dayanand Jagtap
 
-<!-- ![Blogin Logo](./src/assets/Site.png) -->
+A portfolio site developed in NextJs.
 
-A portfolio site developed in NextJs
+-   Developed by using react(component) pattern.
+-   Each component has it's own scope and style.
+-   Nothing fancy is used, it is developed using just JSX and pure css.
+-   For contact form, EmailJs is used!

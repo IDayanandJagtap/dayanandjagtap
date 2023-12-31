@@ -23,8 +23,8 @@ const miscProjects = [
 const nextjsProjects = [
     {
         title: "Portfolio",
-        description: "This site is build using Next.js",
-        imageUrl: "/project/ms-clone-preview.png",
+        description: "This site is built using Next.js",
+        imageUrl: "/project/portfolio-preview.png",
         projectLink: "#",
         websiteLink: null,
     },
@@ -43,8 +43,10 @@ const mernProjects = [
 
 const ProjectSection = () => {
     // Set the current selected section
-    const [selectedSection, setSelectedSection] = useState("next");
-    const [projectList, setProjectList] = useState(nextjsProjects);
+    const [selectedSection, setSelectedSection] = useState("all");
+    const [projectList, setProjectList] = useState(
+        nextjsProjects.concat(mernProjects).concat(miscProjects)
+    );
 
     const updateProjectSection = (section) => {
         setSelectedSection(section);

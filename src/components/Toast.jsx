@@ -1,5 +1,4 @@
 "use-client";
-import "@/styles/toast.css";
 import { useEffect } from "react";
 
 const Toast = ({ message, status }) => {

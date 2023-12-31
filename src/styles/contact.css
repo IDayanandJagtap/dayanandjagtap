@@ -6,11 +6,11 @@
     height: fit-content;
     padding: 1rem;
     h1 {
-        font-size: 1.8rem;
+        font-size: 30px;
         font-weight: 600;
         margin: 1rem 0 1.5rem 0;
         border-left: 4px solid var(--primaryColor);
-        padding: 1rem;
+        padding: 0.6rem 1rem;
         color: var(--secondaryColor);
     }
 
@@ -32,6 +32,7 @@
                 border: none;
                 padding: 0.5rem;
                 color: var(--secondaryColor);
+                font-size: 14px;
             }
 
             input {
@@ -74,7 +75,6 @@
                 cursor: pointer;
 
                 svg {
-                    /* transform: scale(1); */
                     fill: var(--secondaryColor);
                     animation: pump 0.9s ease-in-out infinite alternate;
                 }
@@ -105,15 +105,6 @@
     }
 }
 
-.toast {
-    position: sticky;
-    top: 10vh;
-    /* width: ; */
-    padding: 1rem;
-    
-    background-color: var(--primaryBackground);
-}
-
 @keyframes pump {
     0% {
         transform: scale(1.1);
@@ -139,7 +130,7 @@
             text-align: end;
             border: none;
             border-right: 5px solid var(--primaryColor);
-            margin-right: 2rem;
+            margin: 1rem 4rem 0 0;
         }
         div {
             display: flex;

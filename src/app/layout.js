@@ -1,11 +1,8 @@
 // Font :
-import { Ubuntu } from "next/font/google";
+import { Baloo_2 } from "next/font/google";
 import "../styles/global.css";
 
-const ubuntu = Ubuntu({
-    weight: ["300", "400", "500"],
-    subsets: ["cyrillic", "latin"],
-});
+const baloo = Baloo_2({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Dayanand Jagtap",
@@ -16,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={ubuntu.className}>{children}</body>
+            <body className={baloo.className}>{children}</body>
         </html>
     );
 }

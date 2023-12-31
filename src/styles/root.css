@@ -17,6 +17,8 @@
     --codeboxBorder: rgba(92, 23, 176, 0.542);
 }
 
+/* Utility classes */
+
 .center {
     display: flex;
     justify-content: center;

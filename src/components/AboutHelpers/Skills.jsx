@@ -9,6 +9,7 @@ export const Skills = () => {
                 <span className="codeBox">Node Js</span>
                 <span className="codeBox">Github</span>
                 <span className="codeBox">Sql</span>
+                <span className="codeBox">Tailwind Css</span>
             </div>
             <br />
             <h5>Languages :</h5>
