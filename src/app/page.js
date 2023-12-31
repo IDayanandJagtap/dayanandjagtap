@@ -5,6 +5,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import ProjectSection from "@/components/ProjectSection";
+import Toast from "@/components/Toast";
 import { Navbar } from "@/components/header/Navbar";
 import { useState } from "react";
 

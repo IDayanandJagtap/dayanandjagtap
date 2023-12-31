@@ -48,6 +48,10 @@
                 font-weight: bold;
                 padding: 0.5rem 1rem;
             }
+            button:hover {
+                background-color: var(--primaryBackground);
+                color: var(--primaryColor);
+            }
         }
     }
 
@@ -99,6 +103,15 @@
             }
         }
     }
+}
+
+.toast {
+    position: sticky;
+    top: 10vh;
+    /* width: ; */
+    padding: 1rem;
+    
+    background-color: var(--primaryBackground);
 }
 
 @keyframes pump {

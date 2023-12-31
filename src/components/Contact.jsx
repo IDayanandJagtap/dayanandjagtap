@@ -2,8 +2,61 @@ import "@/styles/contact.css";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { sendMail } from "../../lib/emailJs";
+import { useRef, useState } from "react";
+import Toast from "./Toast";
 
 const Contact = () => {
+    const [formData, setFormData] = useState({ name: "", email: "", msg: "" });
+    const [onSubmitMsg, setOnSubmitMsg] = useState({
+        status: "",
+        msg: "Thank you for contacting me 😄. I'll reply you soon...",
+    });
+    const [isToastVisible, setIsToastVisible] = useState(0);
+
+    const emailRegx =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    const handleOnInputChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const showToast = (msg, status) => {
+        setOnSubmitMsg({ status, msg });
+        setIsToastVisible(1);
+        setTimeout(() => {
+            setIsToastVisible(0);
+        }, 4000);
+    };
+
+    const handleOnFormSubmit = async (e) => {
+        e.preventDefault();
+        document.body.style.cursor = "wait";
+
+        try {
+            if (!formData.email.match(emailRegx)) {
+                throw new Error("Email is not valid!");
+            }
+
+            const response = await sendMail(
+                formData.name,
+                formData.email,
+                formData.msg
+            );
+
+            const msg =
+                "Thank you for contacting me 😄. I'll reply you soon...";
+
+            showToast(msg, "success");
+        } catch (e) {
+            const msg = "Oops something went wrong ! 😔";
+            showToast(e.message, "error");
+            console.log(e);
+        } finally {
+            document.body.style.cursor = "default";
+        }
+    };
+
     return (
         <section id="contact">
             <h1>Contact</h1>
@@ -15,20 +68,25 @@ const Contact = () => {
                             name="name"
                             id=""
                             placeholder="Naruto Uzumaki"
+                            onChange={handleOnInputChange}
                         />
                         <input
                             type="email"
                             name="email"
                             id=""
                             placeholder="hokage@konoha.com"
+                            onChange={handleOnInputChange}
                         />
                         <textarea
                             name="msg"
                             id=""
                             rows={5}
                             placeholder="Just saying hii !"
+                            onChange={handleOnInputChange}
                         />
-                        <button className="btn">Send</button>
+                        <button className="btn" onClick={handleOnFormSubmit}>
+                            Send
+                        </button>
                     </form>
                 </section>
                 <section className="contact-links">
@@ -65,6 +123,11 @@ const Contact = () => {
                     </div>
                 </section>
             </div>
+            {isToastVisible ? (
+                <Toast message={onSubmitMsg.msg} status={onSubmitMsg.status} />
+            ) : (
+                <></>
+            )}
         </section>
     );
 };
