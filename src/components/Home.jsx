@@ -28,7 +28,7 @@ export const Home = () => {
 
             <section className="home-imgHolder flex justify-center align-center">
                 <Image
-                    src={"/kakashi.png"}
+                    src={"/kakashi-home.png"}
                     alt="Home image"
                     width={573}
                     height={573}

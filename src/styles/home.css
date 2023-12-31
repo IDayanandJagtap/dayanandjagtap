@@ -21,7 +21,7 @@
         transition: all 0.3s;
     }
     #homeImg:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
 .home-imgHolder::after {
