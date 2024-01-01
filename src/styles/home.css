@@ -11,7 +11,7 @@
     height: 50%;
     transform: scaleX(-1);
 
-    #homeImg {
+    & #homeImg {
         width: 60%;
         height: auto;
         border-radius: 50%;
@@ -20,7 +20,7 @@
         filter: drop-shadow(2px 2px 5px #111);
         transition: all 0.3s;
     }
-    #homeImg:hover {
+    & #homeImg:hover {
         transform: translateY(-5px);
     }
 }
@@ -43,17 +43,20 @@
     align-items: center;
     justify-content: start;
 
-    h1 {
+    & h1 {
         color: var(--secondaryColor);
         font-size: 2rem;
     }
-    span {
-        font-size: 2.3rem;
+    & .animateText {
+        font-size: 2.2rem;
         color: transparent;
         font-weight: bold;
     }
+    & p {
+        text-align: center;
+    }
 
-    .text-gradient-wrapper {
+    & .text-gradient-wrapper {
         background: linear-gradient(
             to right,
             var(--secondaryColor),
@@ -66,7 +69,7 @@
         background-clip: text;
     }
 
-    .home-description {
+    & .home-description {
         color: var(--secondaryColor);
         padding: 1rem 0.8rem;
         font-size: 0.85rem;
@@ -84,7 +87,7 @@
     .home-imgHolder {
         height: 60%;
 
-        #homeImg {
+        & #homeImg {
             width: 50%;
         }
     }
@@ -93,14 +96,14 @@
         height: 40%;
         padding: 1rem 2rem 1rem 5rem;
 
-        h1 {
+        & h1 {
             font-size: 2.3rem;
         }
-        span {
+        & .animateText {
             font-size: 3.1rem;
         }
 
-        .home-description {
+        & .home-description {
             width: 80%;
             text-align: center;
             margin: 2rem auto;
@@ -112,19 +115,19 @@
 
 @media screen and (min-width: 768px) {
     .home-imgHolder {
-        #homeImg {
+        & #homeImg {
             width: 40%;
         }
     }
     .home-textHolder {
-        h1 {
+        & h1 {
             font-size: 2.7rem;
         }
-        span {
+        & .animateText {
             font-size: 3.3rem;
         }
 
-        .home-description {
+        & .home-description {
             font-size: 1rem;
         }
     }
@@ -138,7 +141,7 @@
         width: 40%;
         height: 100%;
 
-        #homeImg {
+        & #homeImg {
             width: 60%;
         }
     }
@@ -154,14 +157,14 @@
         align-items: start;
         padding: 1rem 2rem 1rem 5rem;
 
-        h1 {
+        & h1 {
             font-size: 2.8rem;
         }
-        span {
+        & .animateText {
             font-size: 3.6rem;
         }
 
-        .home-description {
+        & .home-description {
             margin-top: 0.5rem;
             width: 100%;
             text-align: left;

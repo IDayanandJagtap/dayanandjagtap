@@ -1,14 +1,14 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export const Certifications = () => {
     return (
-        <Image
-            src={"/certificate.png"}
-            width={532}
-            height={532}
-            alt="web development completed certificate"
-            id="certImg"
-        />
+        <Link
+            href={
+                "https://github.com/IDayanandJagtap/certificates/blob/main/Udemy%20web%20dev.png"
+            }
+        >
+            Udemy Full stack web development Certificate
+        </Link>
     );
 };
 

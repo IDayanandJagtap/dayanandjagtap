@@ -11,16 +11,16 @@
     z-index: 100;
     background-color: var(--primaryBackground);
     box-shadow: 2px 2px 5px var(--secondaryBackground);
-    a {
+    & a {
         text-decoration: none;
         display: block;
     }
-    h1 {
+    & h1 {
         color: var(--primaryColor);
         font-size: 36px;
         font-weight: bolder;
     }
-    .nav-menu {
+    & .nav-menu {
         border-radius: 50%;
         width: 45px;
         height: 45px;
@@ -30,7 +30,7 @@
         }
     }
 
-    .nav-menu:hover {
+    & .nav-menu:hover {
         background-color: var(--primaryColor);
     }
 }
@@ -64,13 +64,13 @@
     margin: auto;
     height: 40%;
 
-    .link {
+    & .link {
         color: var(--secondaryColor);
         text-decoration: none;
         font-size: 18px;
         font-weight: 600;
     }
-    .link:hover {
+    & .link:hover {
         color: var(--primaryColor);
     }
 }
@@ -79,24 +79,24 @@
     width: 100%;
     padding: 0.4rem;
 
-    h3 {
+    & h3 {
         font-weight: normal;
         font-size: 1.3rem;
         padding: 0.9rem 0.3rem;
         color: var(--primaryColor);
     }
 
-    .radio-group {
+    & .radio-group {
         width: 100%;
         margin: auto;
 
-        .radio-input {
+        & .radio-input {
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: var(--secondaryColor);
 
-            input {
+            & input {
                 margin: 0 5px;
             }
         }
@@ -128,7 +128,7 @@
     padding: 0.6rem 1.2rem;
     font-size: 12px;
 
-    option {
+    & option {
         background-color: var(--secondaryBackground);
         color: var(--secondaryColor);
         padding: 0.6rem;
@@ -161,10 +161,10 @@
 
     .navbar {
         padding: 1rem 3rem;
-        h1 {
+        & h1 {
             width: 35%;
         }
-        .nav-btns {
+        & .nav-btns {
             width: 35%;
         }
     }
@@ -172,7 +172,7 @@
         width: 30%;
         height: auto;
 
-        .link {
+        & .link {
             font-weight: 300;
         }
     }
@@ -182,8 +182,8 @@
     }
 
     .navbar-scrolled {
-        .nav-drawer-links {
-            .link {
+        & .nav-drawer-links {
+            & .link {
                 font-size: 1.15rem;
             }
         }

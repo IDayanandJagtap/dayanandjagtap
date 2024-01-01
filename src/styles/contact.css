@@ -5,7 +5,7 @@
     min-height: 100vh;
     height: fit-content;
     padding: 1rem;
-    h1 {
+    & h1 {
         font-size: 30px;
         font-weight: 600;
         margin: 1rem 0 1.5rem 0;
@@ -14,9 +14,10 @@
         color: var(--secondaryColor);
     }
 
-    .contact-form {
+    & .contact-form {
         margin-top: 3rem;
-        form {
+
+        & form {
             width: 95%;
             margin: auto;
             background-color: var(--secondaryBackground);
@@ -25,7 +26,7 @@
             border-radius: 6px;
             box-shadow: 3px 3px 8px var(--commonShadow);
 
-            input,
+            & input,
             textarea {
                 outline: none;
                 background-color: var(--secondaryBackground);
@@ -35,11 +36,11 @@
                 font-size: 14px;
             }
 
-            input {
+            & input {
                 border-bottom: 1px solid var(--tertiaryColor);
             }
 
-            button {
+            & button {
                 color: var(--secondaryBackground);
                 background-color: var(--primaryColor);
                 width: fit-content;
@@ -49,54 +50,56 @@
                 font-weight: bold;
                 padding: 0.5rem 1rem;
             }
-            button:hover {
+            & button:hover {
                 background-color: var(--primaryBackground);
                 color: var(--primaryColor);
             }
         }
     }
 
-    .contact-links {
+    & .contact-links {
         padding: 2rem 0;
         margin-top: 1rem;
-        h3 {
+
+        & h3 {
             color: var(--secondaryColor);
         }
 
-        div {
+        & div {
             width: 80%;
             margin: 2rem auto;
             justify-content: space-between;
             align-items: center;
 
-            .c-link {
+            & .c-link {
                 margin: 0 1rem;
                 transition: all 0.2s linear;
                 cursor: pointer;
 
-                svg {
+                & svg {
                     fill: var(--secondaryColor);
                     animation: pump 0.9s ease-in-out infinite alternate;
                 }
 
-                span {
+                & span {
                     display: none;
                     color: var(--secondaryColor);
                 }
-                span:hover {
+                & span:hover {
                     color: var(--primaryColor);
                 }
             }
-            .c-link:hover {
+
+            & .c-link:hover {
                 transform: scale(1.1);
             }
 
-            :nth-child(2) {
+            & :nth-child(2) {
                 svg {
                     animation-delay: 0.5s;
                 }
             }
-            :nth-child(3) {
+            & :nth-child(3) {
                 svg {
                     animation-delay: 1s;
                 }
@@ -116,8 +119,8 @@
 
 @media screen and (min-width: 668px) {
     #contact {
-        .contact-links {
-            div {
+        & .contact-links {
+            & div {
                 width: 60%;
             }
         }

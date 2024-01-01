@@ -25,7 +25,7 @@ const nextjsProjects = [
         title: "Portfolio",
         description: "This site is built using Next.js",
         imageUrl: "/project/portfolio-preview.png",
-        projectLink: "#",
+        projectLink: "https://github.com/IDayanandJagtap/dayanandjagtap",
         websiteLink: null,
     },
 ];

@@ -19,6 +19,7 @@ export const Home = () => {
                         repeat={Infinity}
                         wrapper="span"
                         speed={50}
+                        className="animateText"
                     />
                 </p>
                 <p className="home-description">
