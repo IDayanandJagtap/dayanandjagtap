@@ -16,7 +16,7 @@ const About = ({ theme }) => {
                     src={"/itachi-about.png"}
                     width={532}
                     height={532}
-                    alt="itachi-image"
+                    alt="itachi-uchiha-image-near-about-section"
                     id="aboutImg"
                 />
             </section>
