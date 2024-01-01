@@ -14,7 +14,12 @@ export const NavDrawer = ({
             <div className="nav-drawer-links flex flex-col justify-between align-center">
                 {navList.map((e) => {
                     return (
-                        <Link key={e.link} href={e.link} className="link">
+                        <Link
+                            key={e.link}
+                            href={e.link}
+                            className="link"
+                            onClick={handleNavOnClose}
+                        >
                             {e.name}
                         </Link>
                     );

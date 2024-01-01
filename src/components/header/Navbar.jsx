@@ -47,6 +47,7 @@ export const Navbar = ({ theme, updateTheme }) => {
 
     const handleOnThemeChange = (event) => {
         updateTheme(event.target.value);
+        handleNavOnClose();
     };
     // Event listener
 
