@@ -46,8 +46,7 @@
         font-size: 16px;
         color: var(--secondaryColor);
 
-        & i,
-        span {
+        & i {
             color: var(--secondaryColor);
         }
     }
@@ -100,14 +99,16 @@
         font-size: 0.9rem;
         color: var(--secondaryColor);
 
-        & ul {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-        }
-
         & li {
-            color: var(--secondaryColor);
-            margin-left: 1rem;
+            & ul {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            & li {
+                color: var(--secondaryColor);
+                margin-left: 1rem;
+            }
         }
     }
 
