@@ -1,10 +1,10 @@
 export const Education = () => {
     return (
-        <ul>
-            <li>
+        <ul className="secondaryText">
+            <li className="secondaryText">
                 Bsc Computer Science
-                <ul>
-                    <li>Mes AGC 2022-2024</li>
+                <ul className="secondaryText">
+                    <li className="secondaryText">Mes AGC 2022-2024</li>
                 </ul>
             </li>
         </ul>

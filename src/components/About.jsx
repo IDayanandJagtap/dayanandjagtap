@@ -27,8 +27,8 @@ const About = ({ theme }) => {
                         Hii, &nbsp;My name is Dayanand Jagtap, a developer. I
                         love many things and programming is one of them.{" "}
                         <br></br>I love to be called a &nbsp;
-                        <i>Problem solver</i> &nbsp; rather than a programmer or
-                        a coder or any fancy name!
+                        <i className="italicText">Problem solver</i> &nbsp;
+                        rather than a programmer or a coder or any fancy name!
                         <br />
                         <br />
                         I am interested in solving problems and developing

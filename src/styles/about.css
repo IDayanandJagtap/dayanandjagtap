@@ -50,6 +50,9 @@
             color: var(--secondaryColor);
         }
     }
+    & .italicText {
+        color: var(--secondaryColor);
+    }
 
     & .about-buttonGroup {
         margin: 2rem 0;
@@ -97,19 +100,17 @@
 
     & ul {
         font-size: 0.9rem;
-        color: var(--secondaryColor);
 
         & li {
+            margin-left: 1rem;
             & ul {
                 padding: 0.5rem 1rem;
                 font-size: 0.8rem;
             }
-
-            & li {
-                color: var(--secondaryColor);
-                margin-left: 1rem;
-            }
         }
+    }
+    & .secondaryText {
+        color: var(--secondaryColor);
     }
 
     & #certImg {
