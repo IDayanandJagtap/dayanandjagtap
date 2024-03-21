@@ -62,7 +62,7 @@ const Contact = () => {
             <div>
                 <section className="contact-form">
                     <form className="flex flex-col justify-start">
-                        <label for="name">Name</label>
+                        <label htmlFor="name">Name</label>
                         <input
                             type="text"
                             name="name"
@@ -70,7 +70,7 @@ const Contact = () => {
                             placeholder="Naruto Uzumaki"
                             onChange={handleOnInputChange}
                         />
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -78,7 +78,7 @@ const Contact = () => {
                             placeholder="hokage@konoha.com"
                             onChange={handleOnInputChange}
                         />
-                        <label for="msg">Message</label>
+                        <label htmlFor="msg">Message</label>
                         <textarea
                             name="msg"
                             id="msg"
