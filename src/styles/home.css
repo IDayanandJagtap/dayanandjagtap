@@ -87,7 +87,7 @@
     background-color: var(--primaryBackground);
     border: 1px solid var(--primaryColor);
     font-weight: 400;
-    font-size: small;
+    font-size: large;
     padding: 12px;
     border-radius: 5px;
     margin-right: 1rem;
@@ -107,6 +107,12 @@
 }
 
 /* Media queries  */
+@media screen and (max-width: 568px) {
+    .home-btn {
+        font-size: small;
+    }
+}
+
 @media screen and (min-width: 568px) {
     .home-imgHolder {
         height: 60%;

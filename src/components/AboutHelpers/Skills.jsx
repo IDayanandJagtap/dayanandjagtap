@@ -7,8 +7,8 @@ export const Skills = () => {
                 <span className="codeBox">ReactJs</span>
                 <span className="codeBox">Express Js</span>
                 <span className="codeBox">Node Js</span>
+                <span className="codeBox">MongoDb</span>
                 <span className="codeBox">Github</span>
-                <span className="codeBox">Sql</span>
                 <span className="codeBox">Tailwind Css</span>
             </div>
             <br />

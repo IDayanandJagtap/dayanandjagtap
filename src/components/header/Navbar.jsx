@@ -81,7 +81,10 @@ export const Navbar = ({ theme, updateTheme }) => {
             </div>
 
             <div className={"nav-btns flex align-center justify-end"}>
-                <button className={ubuntu.className + " btn nav-blog-btn "}>
+                <button
+                    className={ubuntu.className + " btn nav-blog-btn "}
+                    disabled={true}
+                >
                     Blog
                 </button>
                 <select
