@@ -24,7 +24,7 @@ const About = ({ theme }) => {
                 <section className="about-text-header">
                     <h1>About me :</h1>
                     <p>
-                        Hii, &nbsp;My name is Dayanand Jagtap, a developer. I
+                        Hii, &nbsp;I am Dayanand, a developer. I
                         love many things and programming is one of them.{" "}
                         <br></br>I love to be called a &nbsp;
                         <i className="italicText">Problem solver</i> &nbsp;
@@ -39,10 +39,10 @@ const About = ({ theme }) => {
                         &quot;&nbsp; that&apos;s all.
                         <br />
                         <br />
-                        Currently I&apos;m mastering mern stack with all the
-                        necessary libraries and NextJs as well.
+                        Currently I am mastering programming paradigms, data structures and algorithms aiming to get familier with programming patterns to deliver better, scalable and efficient solutions.
                         <br />
-                        Also trying to cook some basic DSA problems😉.
+                        <br />
+                        Also, right now I am working as a Software Engineer, gaining hands on experience and applying everything I&apos;ve learned so far.
                         <br />
                     </p>
                     {/* Switching */}
