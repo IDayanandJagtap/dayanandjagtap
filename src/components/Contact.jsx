@@ -38,7 +38,11 @@ const Contact = () => {
                 throw new Error("Email is not valid!");
             }
 
-            const response = await sendMail(
+            if (!formData.name.trim() || !formData.msg.trim()) {
+                throw new Error("Name and message are required.");
+            }
+
+            await sendMail(
                 formData.name,
                 formData.email,
                 formData.msg
@@ -57,17 +61,25 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact">
-            <h1>Contact</h1>
-            <div>
+        <section id="contact" className="contact section-shell">
+            <header className="section-heading">
+                <p className="eyebrow">Contact</p>
+                <h2>If you have a hard problem, send it over.</h2>
+                <p>
+                    I respond best to work that needs a clear system shape, a
+                    practical plan, or a careful tradeoff discussion.
+                </p>
+            </header>
+            <div className="contact-layout">
                 <section className="contact-form">
-                    <form className="flex flex-col justify-start">
+                    <form className="contact-card flex flex-col justify-start" onSubmit={handleOnFormSubmit}>
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
                             name="name"
                             id="name"
-                            placeholder="Naruto Uzumaki"
+                            placeholder="Your name"
+                            required
                             onChange={handleOnInputChange}
                         />
                         <label htmlFor="email">Email</label>
@@ -75,7 +87,8 @@ const Contact = () => {
                             type="email"
                             name="email"
                             id="email"
-                            placeholder="hokage@konoha.com"
+                            placeholder="you@company.com"
+                            required
                             onChange={handleOnInputChange}
                         />
                         <label htmlFor="msg">Message</label>
@@ -83,17 +96,25 @@ const Contact = () => {
                             name="msg"
                             id="msg"
                             rows={10}
-                            placeholder="Just saying hii !"
+                            placeholder="What are you trying to build or fix?"
+                            required
                             onChange={handleOnInputChange}
                         />
-                        <button className="btn" onClick={handleOnFormSubmit}>
+                        <button className="btn" type="submit">
                             Send
                         </button>
                     </form>
                 </section>
                 <section className="contact-links">
-                    {/* <h3>Socials</h3> */}
-                    <div className="flex">
+                    <div className="contact-note">
+                        <h3>Signals I keep active</h3>
+                        <p>
+                            I am usually around backend engineering, cloud
+                            architecture, data flows, and security-minded
+                            systems work.
+                        </p>
+                    </div>
+                    <div className="flex contact-socialRow">
                         <Link
                             href={"https://github.com/IDayanandJagtap"}
                             target="_blank"

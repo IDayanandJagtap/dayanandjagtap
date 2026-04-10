@@ -1,184 +1,124 @@
 @import url("root.css");
 
-#contact {
-    margin-top: 1rem;
-    min-height: 100vh;
-    height: fit-content;
-    padding: 1rem;
-    & h1 {
-        font-size: 30px;
-        font-weight: 600;
-        margin: 1rem 0 1.5rem 0;
-        border-left: 4px solid var(--primaryColor);
-        padding: 0.6rem 1rem;
-        color: var(--secondaryColor);
-    }
-
-    & .contact-form {
-        margin-top: 3rem;
-
-        & form {
-            width: 95%;
-            margin: auto;
-            background-color: var(--secondaryBackground);
-            gap: 0.8rem;
-            padding: 0.5rem;
-            border-radius: 6px;
-            box-shadow: 3px 3px 8px var(--commonShadow);
-
-            & label {
-                display: none;
-            }
-            & input,
-            textarea {
-                outline: none;
-                background-color: var(--secondaryBackground);
-                border: none;
-                padding: 0.5rem;
-                color: var(--secondaryColor);
-                font-size: 14px;
-            }
-
-            & input {
-                border-bottom: 1px solid var(--tertiaryColor);
-            }
-
-            & button {
-                color: var(--secondaryBackground);
-                background-color: var(--primaryColor);
-                width: fit-content;
-                border: 1px solid var(--primaryColor);
-                /* align the button at the end */
-                margin: 0.5rem 0.5rem 0.5rem auto;
-                font-weight: bold;
-                padding: 0.5rem 1rem;
-            }
-            & button:hover {
-                background-color: var(--primaryBackground);
-                color: var(--primaryColor);
-            }
-        }
-    }
-
-    & .contact-links {
-        padding: 2rem 0;
-        margin-top: 1rem;
-
-        & h3 {
-            color: var(--secondaryColor);
-        }
-
-        & div {
-            width: 80%;
-            margin: 2rem auto;
-            justify-content: space-between;
-            align-items: center;
-
-            & .c-link {
-                margin: 0 1rem;
-                transition: all 0.2s linear;
-                cursor: pointer;
-
-                & svg {
-                    fill: var(--secondaryColor);
-                    animation: pump 0.9s ease-in-out infinite alternate;
-                }
-
-                & span {
-                    display: none;
-                    color: var(--secondaryColor);
-                }
-                & span:hover {
-                    color: var(--primaryColor);
-                }
-            }
-
-            & .c-link:hover {
-                transform: scale(1.1);
-            }
-
-            & :nth-child(2) {
-                svg {
-                    animation-delay: 0.5s;
-                }
-            }
-            & :nth-child(3) {
-                svg {
-                    animation-delay: 1s;
-                }
-            }
-        }
-    }
+.contact {
+    display: grid;
+    gap: 1.4rem;
 }
 
-@keyframes pump {
-    0% {
-        transform: scale(1.1);
-    }
-    100% {
-        transfrom: scale(1);
-    }
+.contact-layout {
+    display: grid;
+    gap: 1.2rem;
 }
 
-@media screen and (min-width: 668px) {
-    #contact {
-        & .contact-links {
-            & div {
-                width: 60%;
-            }
-        }
-    }
+.contact-card,
+.contact-note,
+.c-link {
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 24px;
+    box-shadow: 0 20px 45px var(--shadowColor);
+    backdrop-filter: blur(16px);
+}
+
+.contact-card {
+    padding: 1.2rem;
+    gap: 0.85rem;
+}
+
+.contact-card label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primaryColor);
+    font-weight: 800;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--borderColor);
+    border-radius: 16px;
+    padding: 0.95rem 1rem;
+    color: var(--textColor);
+    outline: none;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+    color: var(--mutedColor);
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: var(--primaryColor);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.contact-card button {
+    align-self: flex-end;
+    background: var(--primaryColor);
+    color: var(--buttonTextColor);
+    border: none;
+    font-weight: 800;
+    padding-inline: 1.4rem;
+}
+
+.contact-note {
+    padding: 1.2rem;
+}
+
+.contact-note h3 {
+    font-family: var(--font-heading), sans-serif;
+    margin-bottom: 0.5rem;
+    color: var(--textColor);
+}
+
+.contact-note p {
+    color: var(--mutedColor);
+    line-height: 1.7;
+}
+
+.contact-links {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-socialRow {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.c-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.05rem;
+    transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.c-link svg {
+    fill: var(--primaryColor);
+}
+
+.c-link span {
+    color: var(--textColor);
+    font-weight: 700;
+}
+
+.c-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(249, 115, 22, 0.35);
 }
 
 @media screen and (min-width: 1024px) {
-    #contact {
-        h1 {
-            text-align: end;
-            border: none;
-            border-right: 5px solid var(--primaryColor);
-            margin: 1rem 4rem 0 0;
-        }
-        div {
-            display: flex;
-            flex-direction: row-reverse;
-            width: 100%;
-        }
+    .contact-layout {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: start;
+    }
 
-        .contact-form {
-            width: 60%;
-
-            form {
-                width: 80%;
-            }
-        }
-        .contact-links {
-            width: 40%;
-
-            div {
-                margin: 0;
-                padding: 2rem;
-                width: 100%;
-                height: 100%;
-
-                flex-direction: column;
-                gap: 2rem;
-                align-items: flex-start;
-                justify-content: center;
-
-                .c-link {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    column-gap: 0.7rem;
-                    text-decoration: none;
-
-                    span {
-                        display: inline-block;
-                        text-decoration: none;
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
+    .contact-links {
+        gap: 1.3rem;
     }
 }

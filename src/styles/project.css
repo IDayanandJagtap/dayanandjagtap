@@ -1,148 +1,146 @@
 @import url("root.css");
 
 .project {
-    margin-top: 80px;
-    min-height: 100vh;
-    height: fit-content;
+    display: grid;
+    gap: 1.4rem;
+}
+
+.case-study-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.case-study-card {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.3rem;
+    border-radius: 28px;
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 24px 50px var(--shadowColor);
+}
+
+.case-study-domain {
+    color: var(--primaryColor);
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.case-study-card h3 {
+    font-family: var(--font-heading), sans-serif;
+    letter-spacing: -0.03em;
+    color: var(--textColor);
+    font-size: 1.35rem;
+}
+
+.case-study-section strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--primaryColor);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+}
+
+.case-study-section p {
+    color: var(--mutedColor);
+    line-height: 1.7;
+}
+
+.case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.case-study-tags span {
+    display: inline-flex;
+    padding: 0.42rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid var(--borderColor);
+    color: var(--textColor);
+    font-size: 0.8rem;
+}
+
+.project-lowerBlock {
+    margin-top: 1.8rem;
+}
+
+.project-content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.content-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 20px 40px var(--shadowColor);
+    transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.content-cardImage {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.content-cardText {
+    padding: 1rem 1rem 1.15rem;
+}
+
+.content-cardText h3 {
+    font-family: var(--font-heading), sans-serif;
+    color: var(--textColor);
+    margin-bottom: 0.35rem;
+}
+
+.content-cardText p {
+    color: var(--mutedColor);
+    line-height: 1.65;
+    font-size: 0.95rem;
+}
+
+.content-cardLink {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 0.75rem;
     padding: 1rem;
-
-    & h1 {
-        font-size: 30px;
-        font-weight: 600;
-        margin: 1rem 0 1.5rem 0;
-        border-left: 4px solid var(--primaryColor);
-        padding: 0.6rem 1rem;
-        color: var(--secondaryColor);
-    }
-
-    & .project-selectGroup {
-        padding: 1rem;
-
-        & button {
-            margin: 0 1rem;
-            background-color: var(--primaryBackground);
-            color: var(--secondaryColor);
-            border: none;
-            border-bottom: 2px solid var(--primaryBackground);
-            padding: 0.1rem 0.3rem;
-            cursor: pointer;
-            font-size: large;
-        }
-
-        & button:hover {
-            border-bottom: 2px solid var(--primaryColor);
-        }
-
-        & .activeSection {
-            border-bottom: 2px solid var(--primaryColor);
-        }
-    }
-
-    & .project-content {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
-        gap: 2rem;
-        place-content: center;
-        padding: 2rem;
-        max-width: 100%;
-        min-height: 40vh;
-        border-radius: 8px;
-        background-color: var(--secondaryBackground);
-
-        & .content-card {
-            border: 1px solid var(--secondaryBackground);
-            border-radius: 6px;
-            transition: transform 0.2s linear;
-            position: relative;
-
-            & .content-cardImage {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                border-radius: 8px 8px 0 0;
-            }
-
-            & .content-cardText {
-                padding: 1rem;
-                width: 100%;
-                height: 100%;
-                background-color: var(--primaryBackground);
-                border-radius: 0 0 6px 6px;
-
-                & h3 {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: var(--secondaryColor);
-                }
-                & p {
-                    margin-top: 0.5rem;
-                    letter-spacing: 0.5px;
-                    font-size: 12px;
-                    color: var(--secondaryColor);
-                }
-            }
-
-            & .content-cardLink {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: hsla(0, 100%, 100%, 0.3);
-                border-radius: 6px;
-                opacity: 0;
-                transition: all 0.3s;
-
-                & a {
-                    width: 3rem;
-                    height: 3rem;
-                    border: 3px solid var(--commonShadow);
-                    border-radius: 50%;
-                    text-decoration: none;
-                    margin: 0 0.5rem;
-                    transition: transform 0.2s;
-                    cursor: pointer;
-
-                    & svg {
-                        fill: var(--commonShadow);
-                    }
-                }
-                & a:hover {
-                    transform: scale(1.03);
-                }
-            }
-        }
-
-        & .content-card:hover {
-            transform: scale(1.05);
-            .content-cardLink {
-                opacity: 0.8;
-            }
-        }
-    }
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.36));
+    opacity: 0;
+    transition: opacity 0.22s ease;
 }
 
-@media screen and (min-width: 568px) {
-    .project {
-        padding: 2rem;
-        & h1 {
-            width: 30%;
-        }
-    }
+.content-cardLink a {
+    width: 2.7rem;
+    height: 2.7rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.72);
 }
 
-@media screen and (min-width: 1024px) {
-    .project {
-        padding: 3rem;
-        margin-top: 5vh;
-
-        & h1 {
-            margin: 1rem 0 1.5rem 2rem;
-        }
-    }
-    .project-content {
-        width: 80%;
-        margin: auto;
-    }
+.content-cardLink a svg {
+    fill: #fff;
 }
+
+.content-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.24);
+}
+
+.content-card:hover .content-cardLink {
+    opacity: 1;
+}
+

@@ -1,7 +1,6 @@
-import Image from "next/image";
 import "@/styles/home.css";
-import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import { heroMetrics, luminaSteps } from "@/data/portfolioContent";
 export const Home = () => {
     const handleOnDownloadCv = () => {
         let pdf = "/Dayanand_Jagtap.pdf";
@@ -9,53 +8,54 @@ export const Home = () => {
     };
 
     return (
-        <div className="home flex align-center" id="home">
-            <section className="home-textHolder flex flex-col ">
-                <h1>Hello, I&apos;m </h1>
-                <p className="text-gradient-wrapper">
-                    <TypeAnimation
-                        sequence={[
-                            "Dayanand.",
-                            1000,
-                            "a Developer !",
-                            1000,
-                            "a Full Stack Engineer",
-                            1000,
-                        ]}
-                        repeat={Infinity}
-                        wrapper="span"
-                        speed={50}
-                        className="animateText"
-                    />
-                </p>
+        <section className="home section-shell" id="home">
+            <div className="home-copy">
+                <p className="eyebrow">Backend engineer · systems thinker</p>
+                <h1>Builder of systems, not just code.</h1>
                 <p className="home-description">
-                    Let&apos;s build something great together 😉✨
+                    I work end-to-end: customer, interface, backend,
+                    infrastructure, data, and the tradeoffs that hold them
+                    together.
                 </p>
-                <div className="flex ">
+                <div className="home-actions flex">
                     <button
                         className="home-btn primary-btn"
                         onClick={handleOnDownloadCv}
                     >
                         Download CV
                     </button>
-                    <Link href={"#contact"}>
-                        <button className="home-btn secondary-btn">
-                            Contact Me
-                        </button>
+                    <Link href={"#contact"} className="home-btn secondary-btn">
+                        Start a conversation
                     </Link>
                 </div>
-            </section>
+                <div className="hero-metrics">
+                    {heroMetrics.map((metric) => (
+                        <article className="metric-card" key={metric.value}>
+                            <strong>{metric.value}</strong>
+                            <p>{metric.label}</p>
+                        </article>
+                    ))}
+                </div>
+            </div>
 
-            <section className="home-imgHolder flex justify-center align-center">
-                <Image
-                    src={"/kakashi-home.png"}
-                    alt="Kakashi-image-hero-section"
-                    width={573}
-                    height={573}
-                    id="homeImg"
-                />
-            </section>
-        </div>
+            <aside className="home-systemPanel">
+                <div className="system-panelHeader">
+                    <span>Lumina</span>
+                    <p>A quiet operating model for the way I build.</p>
+                </div>
+                <ol className="lumina-list">
+                    {luminaSteps.map((step, index) => (
+                        <li key={step}>
+                            <span>{index + 1}</span>
+                            <p>{step}</p>
+                        </li>
+                    ))}
+                </ol>
+                <div className="system-panelFooter">
+                    Calm power. Clear outcomes. No noise.
+                </div>
+            </aside>
+        </section>
     );
 };
 
