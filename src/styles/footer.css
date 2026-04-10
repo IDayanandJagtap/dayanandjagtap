@@ -1,25 +1,20 @@
 @import url("root.css");
 
 #footer {
-    margin-top: -10vh;
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-    border-top: 0.3px solid var(--secondaryBackground);
-    background-color: var(--secondaryBackground);
+    width: min(calc(100% - 2rem), var(--pageMaxWidth));
+    margin: 1rem auto 2rem;
+    padding: 1.25rem 0 0;
+    gap: 1rem;
+    border-top: 1px solid var(--borderColor);
+    color: var(--mutedColor);
+}
 
-    & h3 {
-        color: var(--primaryColor);
-    }
-
-    & p {
-        color: var(--tertiaryColor);
-    }
-
-    & a {
-        background-color: var(--primaryColor);
-        padding: 0.5rem;
-        border-radius: 50%;
-        border: none;
-        color: var(--secondaryColor);
-    }
+#footer a {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    border: 1px solid var(--borderColor);
+    background: var(--primaryColor);
+    color: var(--buttonTextColor);
+    box-shadow: 0 14px 30px var(--shadowColor);
 }

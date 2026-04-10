@@ -3,62 +3,88 @@
 import { BiMenuAltRight } from "react-icons/bi";
 import "@/styles/navbar.css";
 import NavDrawer from "./NavDrawer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Ubuntu } from "next/font/google";
-
-const ubuntu = Ubuntu({ subsets: ["latin", "cyrillic-ext"], weight: "400" });
-const navList = [
-    {
-        link: "#home",
-        name: "Home",
-    },
-    {
-        link: "#about",
-        name: "About",
-    },
-    {
-        link: "#project",
-        name: "Projects",
-    },
-    {
-        link: "#contact",
-        name: "Contact",
-    },
-];
+import { navLinks } from "@/data/portfolioContent";
 
 export const Navbar = ({ theme, updateTheme }) => {
-    const [isNavOpen, setIsNavOpen] = useState(0);
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("#home");
+
+    useEffect(() => {
+        const sectionIds = navLinks.map((item) => item.link);
+        const sectionElements = sectionIds.map((id) => document.querySelector(id));
+
+        if (!sectionElements.some(Boolean)) {
+            return undefined;
+        }
+
+        const updateActiveFromScroll = () => {
+            const probeLine = window.scrollY + window.innerHeight * 0.34;
+            let current = sectionIds[0];
+
+            sectionElements.forEach((section, index) => {
+                if (!section) {
+                    return;
+                }
+
+                if (section.offsetTop <= probeLine) {
+                    current = sectionIds[index];
+                }
+            });
+
+            setActiveSection(current);
+        };
+
+        window.addEventListener("scroll", updateActiveFromScroll, {
+            passive: true,
+        });
+        window.addEventListener("resize", updateActiveFromScroll);
+        updateActiveFromScroll();
+
+        return () => {
+            window.removeEventListener("scroll", updateActiveFromScroll);
+            window.removeEventListener("resize", updateActiveFromScroll);
+        };
+    }, []);
 
     const handleNavOnOpen = () => {
-        const navDrawer = document.getElementsByClassName("nav-drawer")[0];
-        if (!isNavOpen) {
-            setIsNavOpen(1);
-            navDrawer.style.top = 0;
-        }
+        setIsNavOpen(true);
     };
     const handleNavOnClose = () => {
-        const navDrawer = document.getElementsByClassName("nav-drawer")[0];
-        if (isNavOpen) {
-            setIsNavOpen(0);
-            navDrawer.style.top = "-200vh";
-        }
+        setIsNavOpen(false);
     };
 
     const handleOnThemeChange = (event) => {
         updateTheme(event.target.value);
         handleNavOnClose();
     };
-    // Event listener
+
+    const handleThemeSelect = (value) => {
+        updateTheme(value);
+        handleNavOnClose();
+        setIsThemeMenuOpen(false);
+    };
+
+    const handleOnNavLinkClick = (link) => {
+        setActiveSection(link);
+    };
 
     return (
         <nav className={"navbar flex justify-between align-center"}>
-            <h1>DJ</h1>
+            <Link href="#home" className="brand">
+                DJ
+            </Link>
             {/* for small screens */}
             <NavDrawer
+                isOpen={isNavOpen}
                 handleNavOnClose={handleNavOnClose}
                 handleOnThemeChange={handleOnThemeChange}
-                navList={navList}
+                handleThemeSelect={handleThemeSelect}
+                activeSection={activeSection}
+                handleOnNavLinkClick={handleOnNavLinkClick}
+                navList={navLinks}
                 theme={theme}
             />
             <div className="nav-menu center">
@@ -71,9 +97,18 @@ export const Navbar = ({ theme, updateTheme }) => {
 
             {/* for large screens */}
             <div className="nav-drawer-links nav-links justify-around align-center">
-                {navList.map((e) => {
+                {navLinks.map((e) => {
                     return (
-                        <Link key={e.link} href={e.link} className="link">
+                        <Link
+                            key={e.link}
+                            href={e.link}
+                            className={
+                                activeSection === e.link
+                                    ? "link active"
+                                    : "link"
+                            }
+                            onClick={() => handleOnNavLinkClick(e.link)}
+                        >
                             {e.name}
                         </Link>
                     );
@@ -82,23 +117,46 @@ export const Navbar = ({ theme, updateTheme }) => {
 
             <div className={"nav-btns flex align-center justify-end"}>
                 <button
-                    className={ubuntu.className + " btn nav-blog-btn "}
+                    className={"btn nav-blog-btn "}
                     disabled={true}
                 >
-                    Blog
+                    Writing soon
                 </button>
-                <select
-                    className={
-                        ubuntu.className +
-                        " btn nav-themeSelectBtn flex justify-center align-center"
-                    }
-                    value={theme}
-                    onChange={handleOnThemeChange}
-                >
-                    <option value={"hyuga"}>Hyuga</option>
-                    <option value={"naruto"}>Naruto</option>
-                    <option value={"uchiha"}>Itachi</option>
-                </select>
+                <div className="nav-themeSelect">
+                    <button
+                        type="button"
+                        className="btn nav-themeSelectBtn flex justify-center align-center"
+                        onClick={() => setIsThemeMenuOpen((prev) => !prev)}
+                    >
+                        {theme === "clarity" ? "Clarity" : "Fire"}
+                    </button>
+                    {isThemeMenuOpen && (
+                        <div className="nav-themeMenu">
+                            <button
+                                type="button"
+                                className={
+                                    theme === "clarity"
+                                        ? "nav-themeOption active"
+                                        : "nav-themeOption"
+                                }
+                                onClick={() => handleThemeSelect("clarity")}
+                            >
+                                Clarity
+                            </button>
+                            <button
+                                type="button"
+                                className={
+                                    theme === "fire"
+                                        ? "nav-themeOption active"
+                                        : "nav-themeOption"
+                                }
+                                onClick={() => handleThemeSelect("fire")}
+                            >
+                                Fire
+                            </button>
+                        </div>
+                    )}
+                </div>
             </div>
         </nav>
     );

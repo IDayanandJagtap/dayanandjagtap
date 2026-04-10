@@ -1,19 +1,27 @@
-// Font :
-import { Baloo_2 } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "../styles/global.css";
 
-const baloo = Baloo_2({ subsets: ["latin"] });
+const manrope = Manrope({
+    subsets: ["latin"],
+    variable: "--font-body",
+});
+
+const spaceGrotesk = Space_Grotesk({
+    subsets: ["latin"],
+    variable: "--font-heading",
+});
 
 export const metadata = {
     title: "Dayanand Jagtap",
-    description:
-        "Web developer | Front-end | Back-end | Developer | Programmer",
+    description: "Backend-focused portfolio built around systems thinking.",
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={baloo.className}>{children}</body>
+            <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+                {children}
+            </body>
         </html>
     );
 }
