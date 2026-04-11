@@ -3,16 +3,18 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { sendMail } from "../../lib/emailJs";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Toast from "./Toast";
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: "", email: "", msg: "" });
+    const [isSending, setIsSending] = useState(false);
     const [onSubmitMsg, setOnSubmitMsg] = useState({
         status: "",
         msg: "Thank you for contacting me 😄. I'll reply you soon...",
     });
     const [isToastVisible, setIsToastVisible] = useState(0);
+    const toastTimerRef = useRef(null);
 
     const emailRegx =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -21,17 +23,31 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const showToast = (msg, status) => {
+    const showToast = (msg, status, duration = 4000) => {
+        if (toastTimerRef.current) {
+            clearTimeout(toastTimerRef.current);
+            toastTimerRef.current = null;
+        }
+
         setOnSubmitMsg({ status, msg });
         setIsToastVisible(1);
-        setTimeout(() => {
-            setIsToastVisible(0);
-        }, 4000);
+
+        if (typeof duration === "number" && duration > 0) {
+            toastTimerRef.current = setTimeout(() => {
+                setIsToastVisible(0);
+            }, duration);
+        }
     };
 
     const handleOnFormSubmit = async (e) => {
         e.preventDefault();
+
+        if (isSending) {
+            return;
+        }
+
         document.body.style.cursor = "wait";
+        setIsSending(true);
 
         try {
             if (!formData.email.match(emailRegx)) {
@@ -49,13 +65,15 @@ const Contact = () => {
             );
 
             const msg =
-                "Thank you for contacting me 😄. I'll reply you soon...";
+                "Thanks for reaching out. I'll get back to you soon.";
 
             showToast(msg, "success");
+            setFormData({ name: "", email: "", msg: "" });
         } catch (e) {
-            showToast(e.message, "error");
-            // console.log(e);
+            console.error("Contact form submit failed:", e);
+            showToast("Something went wrong while sending your msg.", "error");
         } finally {
+            setIsSending(false);
             document.body.style.cursor = "default";
         }
     };
@@ -80,6 +98,8 @@ const Contact = () => {
                             id="name"
                             placeholder="Your name"
                             required
+                            value={formData.name}
+                            disabled={isSending}
                             onChange={handleOnInputChange}
                         />
                         <label htmlFor="email">Email</label>
@@ -89,6 +109,8 @@ const Contact = () => {
                             id="email"
                             placeholder="you@company.com"
                             required
+                            value={formData.email}
+                            disabled={isSending}
                             onChange={handleOnInputChange}
                         />
                         <label htmlFor="msg">Message</label>
@@ -96,12 +118,14 @@ const Contact = () => {
                             name="msg"
                             id="msg"
                             rows={10}
-                            placeholder="What are you trying to build or fix?"
+                            placeholder="Just saying hi!"
                             required
+                            value={formData.msg}
+                            disabled={isSending}
                             onChange={handleOnInputChange}
                         />
-                        <button className="btn" type="submit">
-                            Send
+                        <button className="btn" type="submit" disabled={isSending}>
+                            {isSending ? "Sending..." : "Send"}
                         </button>
                     </form>
                 </section>
@@ -135,7 +159,7 @@ const Contact = () => {
                         </Link>
                         <Link
                             href={
-                                "https://x.com/IDayanandJagtap?t=9whRp6I0Wb169Kqp-OMA7Q&s=09"
+                                "https://x.com/IDayanandJagtap"
                             }
                             target="_blank"
                             className="c-link"

@@ -1,5 +1,6 @@
 import "@/styles/about.css";
 import {
+    howIThinkStatements,
     operatingPrinciples,
     thinkingSignals,
 } from "@/data/portfolioContent";
@@ -28,6 +29,14 @@ const About = ({ theme }) => {
 
             <div className="thinking-panel">
                 <div>
+                    <h3>How I think</h3>
+                    <div className="how-i-think">
+                        {howIThinkStatements.map((line) => (
+                            <p key={line}>{line}</p>
+                        ))}
+                    </div>
+                </div>
+                <div>
                     <h3>Signals I keep close</h3>
                     <p>
                         Distributed systems, cloud design, backend depth,
@@ -37,8 +46,7 @@ const About = ({ theme }) => {
                 <div className="signals-list">
                     {thinkingSignals.map((signal) => (
                         <span key={signal} className="signal-pill">
-                            {signal}
-                        </span>
+                            {signal}</span>
                     ))}
                 </div>
             </div>

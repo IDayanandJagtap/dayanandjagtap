@@ -1,30 +1,24 @@
 import "@/styles/home.css";
 import Link from "next/link";
-import { heroMetrics, luminaSteps } from "@/data/portfolioContent";
-export const Home = () => {
-    const handleOnDownloadCv = () => {
-        let pdf = "/Dayanand_Jagtap.pdf";
-        window.open(pdf);
-    };
+import {
+    heroHeadline,
+    heroMetrics,
+    ctoTrajectory,
+} from "@/data/portfolioContent";
 
+export const Home = () => {
     return (
         <section className="home section-shell" id="home">
-            <div className="home-copy">
+            <div className="home-copy reveal-up">
                 <p className="eyebrow">Backend engineer · systems thinker</p>
-                <h1>Builder of systems, not just code.</h1>
+                <h1>{heroHeadline}</h1>
                 <p className="home-description">
-                    I work end-to-end: customer, interface, backend,
-                    infrastructure, data, and the tradeoffs that hold them
-                    together.
+                    I build through the full chain: customer, interface,
+                    backend, infrastructure, data, and tradeoffs. My goal is
+                    not feature output. My goal is reliable system behavior.
                 </p>
                 <div className="home-actions flex">
-                    <button
-                        className="home-btn primary-btn"
-                        onClick={handleOnDownloadCv}
-                    >
-                        Download CV
-                    </button>
-                    <Link href={"#contact"} className="home-btn secondary-btn">
+                    <Link href={"#contact"} className="home-btn primary-btn">
                         Start a conversation
                     </Link>
                 </div>
@@ -39,20 +33,37 @@ export const Home = () => {
             </div>
 
             <aside className="home-systemPanel">
-                <div className="system-panelHeader">
-                    <span>Lumina</span>
-                    <p>A quiet operating model for the way I build.</p>
-                </div>
-                <ol className="lumina-list">
-                    {luminaSteps.map((step, index) => (
-                        <li key={step}>
-                            <span>{index + 1}</span>
-                            <p>{step}</p>
-                        </li>
-                    ))}
-                </ol>
-                <div className="system-panelFooter">
-                    Calm power. Clear outcomes. No noise.
+                <div className="cto-trajectory">
+                    <div className="trajectory-header">
+                        <span>Journey</span>
+                        <p>The path to CTO thinking.</p>
+                    </div>
+                    <div className="trajectory-timeline">
+                        {ctoTrajectory.map((item, index) => (
+                            <div
+                                key={item.stage}
+                                className={`trajectory-step ${ctoTrajectory.length - index > 3 ? "upcoming" : ctoTrajectory.length - index === 3 ? "current" : "completed"}`}
+                            >
+                                <div className="step-indicator">
+                                    <span className="step-number">
+                                        {ctoTrajectory.length - index}
+                                    </span>
+                                </div>
+                                <div className="step-content">
+                                    <h4>{item.stage}</h4>
+                                    <p className="step-description">{item.description}</p>
+                                    {item.highlights?.length > 0 && (
+                                        <ul className="step-points">
+                                            {item.highlights.map((point) => (
+                                                <li key={`${item.stage}-${point}`}>{point}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    <p className="step-years">{item.years}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </aside>
         </section>

@@ -1,0 +1,56 @@
+@import url("root.css");
+
+.execution {
+    display: grid;
+    gap: 1.3rem;
+}
+
+.execution-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.execution-card {
+    padding: 1.25rem;
+    border-radius: 24px;
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 20px 45px var(--shadowColor);
+    display: grid;
+    gap: 0.8rem;
+}
+
+.execution-card h3 {
+    font-family: var(--font-heading), sans-serif;
+    letter-spacing: -0.03em;
+    color: var(--textColor);
+}
+
+.execution-card ul,
+.execution-card ol {
+    display: grid;
+    gap: 0.65rem;
+    padding-left: 1.1rem;
+    color: var(--mutedColor);
+    line-height: 1.65;
+}
+
+.execution-tags {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.execution-tags span {
+    display: block;
+    padding: 0.42rem 0.1rem 0.42rem 0.7rem;
+    border-left: 2px solid var(--tagBorderColor);
+    background: transparent;
+    color: var(--textColor);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.roadmap ol {
+    list-style: decimal;
+}
