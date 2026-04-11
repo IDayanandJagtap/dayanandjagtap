@@ -2,13 +2,25 @@ export const navLinks = [
     { link: "#home", name: "Home" },
     { link: "#thinking", name: "Thinking" },
     { link: "#systems", name: "Systems" },
+    { link: "#execution", name: "Execution" },
     { link: "#contact", name: "Contact" },
 ];
 
+export const heroHeadline = "From code to systems, I design for scale, failure, and clarity.";
+
 export const heroMetrics = [
-    { value: "Backend first", label: "I start from systems, not screens." },
-    { value: "Azure + data", label: "Cloud and databases shaped my execution." },
-    { value: "Calm delivery", label: "I prefer durable decisions over noisy output." },
+    {
+        value: "Failure-aware",
+        label: "I design systems that degrade gracefully under pressure.",
+    },
+    {
+        value: "Cloud + data",
+        label: "Architecture and data shape decisions drive implementation.",
+    },
+    {
+        value: "Calm execution",
+        label: "I optimize for clarity first, then speed, then polish.",
+    },
 ];
 
 export const luminaSteps = [
@@ -24,8 +36,23 @@ export const thinkingSignals = [
     "Cloud architecture",
     "Backend engineering",
     "Database design",
-    "Security posture",
-    "DevOps discipline",
+    "Product direction",
+    "System design",
+    "Engineering culture",
+];
+
+export const howIThinkStatements = [
+    "I do not optimize for speed first. I optimize for clarity.",
+    "I think in systems, not isolated functions.",
+    "I design for failure paths before success paths.",
+];
+
+export const systemFlow = [
+    "Customer intent",
+    "Interface behavior",
+    "Backend contracts",
+    "Infrastructure boundaries",
+    "Data and tradeoffs",
 ];
 
 export const operatingPrinciples = [
@@ -98,6 +125,67 @@ export const featuredSystems = [
         outcome:
             "A pipeline that handled volume well without losing the shape of the data over time.",
         tags: ["asyncio", "httpx", "Eventual consistency", "Batching"],
+    },
+];
+
+export const executionPrinciples = [
+    "Sequence before speed: define constraints, then implementation order.",
+    "Design for rollback and observability from day one.",
+    "Communicate tradeoffs early to avoid hidden system debt.",
+];
+
+export const executionAreas = [
+    "Auth architecture",
+    "Async pipelines",
+    "Cloud networking",
+    "Database evolution",
+    "Security automation",
+];
+
+export const executionRoadmap = [
+    "Backend Engineer",
+    "Systems Engineer",
+    "Tech Lead",
+    "CTO trajectory",
+];
+
+export const ctoTrajectory = [
+    {
+        stage: "CTO Mindset",
+        description: "Thinking in terms of leverage, impact, and long-term value.",
+        highlights: ["Product direction", "System design", "Engineering culture"],
+        years: "Future",
+        current: false,
+    },
+    {
+        stage: "System Leader",
+        description: "Not just solving problems, but defining direction.",
+        highlights: ["Multiple systems", "Multiple engineers", "Long-term architecture"],
+        years: "2026 - ?",
+        current: false,
+    },
+    {
+        stage: "Systems Thinker",
+        description: "Moving from writing code to understanding systems.",
+        highlights: ["Scale", "Failure", "Clarity"],
+        years: "2025 - Present",
+        current: true,
+    },
+    {
+        stage: "Builder of Features",
+        description:
+            "Turning ideas into working systems. Owning end-to-end development from UI to backend.",
+        highlights: [],
+        years: "2024 - 2025",
+        current: false,
+    },
+    {
+        stage: "Curious Mind",
+        description:
+            "Learning, exploring, and building raw engineering instincts. Understanding how things work, not just how to use them.",
+        highlights: [],
+        years: "2003 - 2024",
+        current: false,
     },
 ];
 

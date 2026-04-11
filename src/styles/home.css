@@ -13,6 +13,10 @@
     gap: 1rem;
 }
 
+.home-copy > * {
+    animation-delay: 0.04s;
+}
+
 .home-copy h1 {
     font-family: var(--font-heading), sans-serif;
     font-size: clamp(2.8rem, 8vw, 6rem);
@@ -71,6 +75,12 @@
     border: 1px solid var(--borderColor);
     box-shadow: 0 20px 40px var(--shadowColor);
     backdrop-filter: blur(16px);
+    transition: transform 0.24s ease, border-color 0.24s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--primaryColor) 45%, var(--borderColor));
 }
 
 .metric-card strong {
@@ -90,6 +100,7 @@
 .home-systemPanel {
     position: relative;
     overflow: hidden;
+    display: block;
     border-radius: 30px;
     padding: 1.4rem;
     background: linear-gradient(180deg, var(--surfaceElevated), var(--surfaceColor));
@@ -159,6 +170,36 @@
     line-height: 1.65;
 }
 
+.system-diagram {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--borderColor);
+    display: grid;
+    gap: 0.45rem;
+}
+
+.diagram-node {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--textColor);
+}
+
+.diagram-node span {
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--borderColor);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.82rem;
+}
+
+.diagram-arrow {
+    color: var(--primaryColor);
+    font-style: normal;
+}
+
 .system-panelFooter {
     position: relative;
     z-index: 1;
@@ -174,6 +215,145 @@
     50% {
         transform: translateY(-8px);
     }
+}
+
+@media screen and (min-width: 860px) {
+    .home {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 1.8rem;
+    }
+}
+
+.cto-trajectory {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1.2rem;
+}
+
+.trajectory-header span {
+    display: inline-flex;
+    margin-bottom: 0.35rem;
+    color: var(--primaryColor);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.trajectory-header p {
+    color: var(--mutedColor);
+    line-height: 1.7;
+}
+
+.trajectory-timeline {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.trajectory-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    padding: 0.75rem 0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.trajectory-step.completed {
+    opacity: 0.82;
+}
+
+.trajectory-step.completed .step-number {
+    background: color-mix(in srgb, var(--primaryColor) 18%, var(--surfaceColor));
+    color: var(--primaryColor);
+    border: 1px solid color-mix(in srgb, var(--primaryColor) 35%, var(--borderColor));
+}
+
+.trajectory-step.completed .step-content h4 {
+    color: var(--mutedColor);
+}
+
+.trajectory-step.completed .step-description,
+.trajectory-step.completed .step-years {
+    opacity: 0.78;
+}
+
+.trajectory-step.current {
+    background: rgba(var(--primaryColor-rgb), 0.08);
+    padding: 0.9rem 0.85rem;
+    border-left: 2px solid var(--primaryColor);
+}
+
+.trajectory-step.current .step-number {
+    box-shadow: 0 0 0 4px rgba(var(--primaryColor-rgb), 0.12);
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-number {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--primaryColor);
+    color: var(--buttonTextColor);
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.trajectory-step.current .step-number {
+    animation: glowPulse 2.5s ease-in-out infinite;
+    box-shadow: 0 0 12px rgba(var(--primaryColor-rgb), 0.6);
+}
+
+.step-content h4 {
+    color: var(--textColor);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.step-description {
+    color: var(--mutedColor);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+}
+
+.step-points {
+    list-style: none;
+    display: grid;
+    gap: 0.22rem;
+    margin: 0 0 0.35rem;
+    padding: 0;
+}
+
+.step-points li {
+    color: var(--textColor);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    opacity: 0.88;
+}
+
+.step-points li::before {
+    content: "• ";
+    color: var(--primaryColor);
+    font-weight: 700;
+}
+
+.step-years {
+    color: var(--primaryColor);
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.9;
 }
 
 @media screen and (min-width: 1024px) {

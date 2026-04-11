@@ -1,14 +1,16 @@
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "../styles/global.css";
 
-const manrope = Manrope({
+const plusJakartaSans = Plus_Jakarta_Sans({
     subsets: ["latin"],
     variable: "--font-body",
+    display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-heading",
+    display: "swap",
 });
 
 export const metadata = {
@@ -18,8 +20,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+        <html
+            lang="en"
+            className={`${plusJakartaSans.variable} ${outfit.variable}`}
+        >
+            <body>
                 {children}
             </body>
         </html>

@@ -61,7 +61,8 @@
     display: inline-flex;
     padding: 0.42rem 0.72rem;
     border-radius: 999px;
-    border: 1px solid var(--borderColor);
+    border: 1px solid var(--tagBorderColor);
+    background: transparent;
     color: var(--textColor);
     font-size: 0.8rem;
 }

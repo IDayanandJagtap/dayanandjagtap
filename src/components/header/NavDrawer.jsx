@@ -3,7 +3,6 @@ import "@/styles/navbar.css";
 export const NavDrawer = ({
     isOpen,
     handleNavOnClose,
-    handleOnThemeChange,
     handleThemeSelect,
     activeSection,
     handleOnNavLinkClick,

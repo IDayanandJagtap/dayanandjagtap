@@ -56,11 +56,6 @@ export const Navbar = ({ theme, updateTheme }) => {
         setIsNavOpen(false);
     };
 
-    const handleOnThemeChange = (event) => {
-        updateTheme(event.target.value);
-        handleNavOnClose();
-    };
-
     const handleThemeSelect = (value) => {
         updateTheme(value);
         handleNavOnClose();
@@ -80,7 +75,6 @@ export const Navbar = ({ theme, updateTheme }) => {
             <NavDrawer
                 isOpen={isNavOpen}
                 handleNavOnClose={handleNavOnClose}
-                handleOnThemeChange={handleOnThemeChange}
                 handleThemeSelect={handleThemeSelect}
                 activeSection={activeSection}
                 handleOnNavLinkClick={handleOnNavLinkClick}
