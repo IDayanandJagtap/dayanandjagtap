@@ -41,17 +41,17 @@ export const NavDrawer = ({
                 <div className="theme-switcher">
                     <button
                         type="button"
-                        className={theme == "clarity" ? "theme-chip active" : "theme-chip"}
-                        onClick={() => handleThemeSelect("clarity")}
+                        className={theme == "Light" ? "theme-chip active" : "theme-chip"}
+                        onClick={() => handleThemeSelect("Light")}
                     >
-                        Clarity
+                        Light
                     </button>
                     <button
                         type="button"
-                        className={theme == "fire" ? "theme-chip active" : "theme-chip"}
-                        onClick={() => handleThemeSelect("fire")}
+                        className={theme == "Dark" ? "theme-chip active" : "theme-chip"}
+                        onClick={() => handleThemeSelect("Dark")}
                     >
-                        Fire
+                        Dark
                     </button>
                 </div>
             </div>

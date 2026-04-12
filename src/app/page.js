@@ -10,11 +10,11 @@ import { Navbar } from "@/components/header/Navbar";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-    const [theme, setTheme] = useState("fire");
+    const [theme, setTheme] = useState("Dark");
 
     useEffect(() => {
         const storedTheme = window.localStorage.getItem("portfolio-theme");
-        if (storedTheme === "fire" || storedTheme === "clarity") {
+        if (storedTheme === "Dark" || storedTheme === "Light") {
             setTheme(storedTheme);
         }
     }, []);
@@ -23,6 +23,35 @@ export default function Page() {
         document.documentElement.dataset.theme = theme;
         window.localStorage.setItem("portfolio-theme", theme);
     }, [theme]);
+
+    useEffect(() => {
+        // Setup scroll-triggered animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections that have fade-in class for scroll-triggered animations
+        const sections = document.querySelectorAll("section.section-shell.fade-in");
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
 
     const updateTheme = (currTheme) => {
         setTheme(currTheme);

@@ -6,7 +6,7 @@ export const navLinks = [
     { link: "#contact", name: "Contact" },
 ];
 
-export const heroHeadline = "From code to systems, I design for scale, failure, and clarity.";
+export const heroHeadline = "Building systems that scale, fail gracefully, and stay understandable.";
 
 export const heroMetrics = [
     {
