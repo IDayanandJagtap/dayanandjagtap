@@ -135,7 +135,19 @@ html[data-theme="Light"] .metric-card:hover {
     border: 1px solid var(--borderColor);
     box-shadow: 0 28px 60px var(--shadowColor);
     transform: translateY(0);
-    animation: gentleFloat 10s ease-in-out infinite;
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+html[data-theme="Dark"] .home-systemPanel:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--primaryColor) 45%, var(--borderColor));
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.22), 0 32px 66px var(--shadowColor);
+}
+
+html[data-theme="Light"] .home-systemPanel:hover {
+    transform: translateY(-6px);
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.16), 0 32px 66px var(--shadowColor);
 }
 
 .home-systemPanel::before {
@@ -233,16 +245,6 @@ html[data-theme="Light"] .metric-card:hover {
     z-index: 1;
     margin-top: 1rem;
     color: var(--mutedColor);
-}
-
-@keyframes gentleFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
 }
 
 @media screen and (min-width: 860px) {
