@@ -11,7 +11,7 @@ export const Home = () => {
         <section className="home section-shell" id="home">
             <div className="home-copy reveal-up">
                 <p className="eyebrow">Backend engineer · systems thinker</p>
-                <h1>{heroHeadline}</h1>
+                <h1 className="hero-headline-delayed">{heroHeadline}</h1>
                 <p className="home-description">
                     I build through the full chain: customer, interface,
                     backend, infrastructure, data, and tradeoffs. My goal is
@@ -37,6 +37,7 @@ export const Home = () => {
                     <div className="trajectory-header">
                         <span>Journey</span>
                         <p>The path to CTO thinking.</p>
+                        <p className="journey-subtitle">Not behind the titles but building the capacity to handle complexity.</p>
                     </div>
                     <div className="trajectory-timeline">
                         {ctoTrajectory.map((item, index) => (

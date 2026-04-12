@@ -57,23 +57,23 @@
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-html[data-theme="clarity"] .nav-drawer {
+html[data-theme="Light"] .nav-drawer {
     color: #ffffff;
 }
 
-html[data-theme="clarity"] .nav-drawer .link,
-html[data-theme="clarity"] .nav-drawer .nav-drawer-closeBtn,
-html[data-theme="clarity"] .nav-drawer .nav-drawer-themeSelecter h3,
-html[data-theme="clarity"] .nav-drawer .theme-chip {
+html[data-theme="Light"] .nav-drawer .link,
+html[data-theme="Light"] .nav-drawer .nav-drawer-closeBtn,
+html[data-theme="Light"] .nav-drawer .nav-drawer-themeSelecter h3,
+html[data-theme="Light"] .nav-drawer .theme-chip {
     color: #ffffff;
 }
 
-html[data-theme="clarity"] .nav-drawer .theme-chip {
+html[data-theme="Light"] .nav-drawer .theme-chip {
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(255, 255, 255, 0.16);
 }
 
-html[data-theme="clarity"] .nav-drawer .theme-chip.active {
+html[data-theme="Light"] .nav-drawer .theme-chip.active {
     background: var(--primaryColor);
     border-color: var(--primaryColor);
     color: #ffffff;

@@ -122,31 +122,31 @@ export const Navbar = ({ theme, updateTheme }) => {
                         className="btn nav-themeSelectBtn flex justify-center align-center"
                         onClick={() => setIsThemeMenuOpen((prev) => !prev)}
                     >
-                        {theme === "clarity" ? "Clarity" : "Fire"}
+                        {theme === "Light" ? "Light" : "Dark"}
                     </button>
                     {isThemeMenuOpen && (
                         <div className="nav-themeMenu">
                             <button
                                 type="button"
                                 className={
-                                    theme === "clarity"
+                                    theme === "Light"
                                         ? "nav-themeOption active"
                                         : "nav-themeOption"
                                 }
-                                onClick={() => handleThemeSelect("clarity")}
+                                onClick={() => handleThemeSelect("Light")}
                             >
-                                Clarity
+                                Light
                             </button>
                             <button
                                 type="button"
                                 className={
-                                    theme === "fire"
+                                    theme === "Dark"
                                         ? "nav-themeOption active"
                                         : "nav-themeOption"
                                 }
-                                onClick={() => handleThemeSelect("fire")}
+                                onClick={() => handleThemeSelect("Dark")}
                             >
-                                Fire
+                                Dark
                             </button>
                         </div>
                     )}

@@ -53,6 +53,23 @@
     background: var(--primaryColor);
     color: var(--buttonTextColor);
     box-shadow: 0 18px 40px var(--shadowColor);
+    transition: box-shadow 0.3s ease, transform 0.24s ease;
+}
+
+html[data-theme="Dark"] .primary-btn {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3), 0 18px 40px var(--shadowColor);
+}
+
+html[data-theme="Dark"] .primary-btn:hover {
+    box-shadow: 0 0 28px rgba(249, 115, 22, 0.5), 0 20px 48px rgba(249, 115, 22, 0.2);
+}
+
+html[data-theme="Light"] .primary-btn {
+    box-shadow: 0 0 16px rgba(167, 139, 250, 0.2), 0 18px 40px var(--shadowColor);
+}
+
+html[data-theme="Light"] .primary-btn:hover {
+    box-shadow: 0 0 24px rgba(167, 139, 250, 0.35), 0 20px 48px rgba(167, 139, 250, 0.15);
 }
 
 .secondary-btn {
@@ -75,12 +92,23 @@
     border: 1px solid var(--borderColor);
     box-shadow: 0 20px 40px var(--shadowColor);
     backdrop-filter: blur(16px);
-    transition: transform 0.24s ease, border-color 0.24s ease;
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 }
 
-.metric-card:hover {
-    transform: translateY(-4px);
+html[data-theme="Dark"] .metric-card:hover {
+    transform: translateY(-6px);
     border-color: color-mix(in srgb, var(--primaryColor) 45%, var(--borderColor));
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.25), 0 24px 48px var(--shadowColor);
+}
+
+html[data-theme="Light"] .metric-card {
+    border: 1px solid rgba(167, 139, 250, 0.18);
+}
+
+html[data-theme="Light"] .metric-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.18), 0 24px 48px var(--shadowColor);
 }
 
 .metric-card strong {
@@ -246,6 +274,13 @@
     line-height: 1.7;
 }
 
+.journey-subtitle {
+    font-size: 0.9rem !important;
+    color: var(--textColor) !important;
+    opacity: 0.78;
+    font-weight: 500;
+}
+
 .trajectory-timeline {
     display: grid;
     gap: 0.6rem;
@@ -356,6 +391,27 @@
     opacity: 0.9;
 }
 
+.hero-headline-delayed {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.35s;
+    background: linear-gradient(135deg, var(--textColor), color-mix(in srgb, var(--textColor) 85%, var(--primaryColor) 15%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .home {
         grid-template-columns: 1.15fr 0.85fr;
@@ -369,4 +425,22 @@
     .home-systemPanel {
         align-self: stretch;
     }
+}
+
+html[data-theme="Light"] .home {
+    gap: 2.2rem;
+    padding: 5rem 0;
+}
+
+html[data-theme="Light"] .home-copy {
+    gap: 1.2rem;
+}
+
+html[data-theme="Light"] .hero-metrics {
+    gap: 1.2rem;
+    margin-top: 1.4rem;
+}
+
+html[data-theme="Light"] .metric-card {
+    padding: 1.2rem 1.3rem;
 }
