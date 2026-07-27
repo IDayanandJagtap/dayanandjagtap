@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { navLinks } from "@/data/portfolioContent";
 
-export const Navbar = ({ theme, updateTheme }) => {
+export const Navbar = ({ theme, updateTheme, linkBase = "" }) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("#home");
@@ -68,7 +68,7 @@ export const Navbar = ({ theme, updateTheme }) => {
 
     return (
         <nav className={"navbar flex justify-between align-center"}>
-            <Link href="#home" className="brand">
+            <Link href={`${linkBase}#home`} className="brand">
                 DJ
             </Link>
             {/* for small screens */}
@@ -80,6 +80,7 @@ export const Navbar = ({ theme, updateTheme }) => {
                 handleOnNavLinkClick={handleOnNavLinkClick}
                 navList={navLinks}
                 theme={theme}
+                linkBase={linkBase}
             />
             <div className="nav-menu center">
                 <BiMenuAltRight
@@ -95,7 +96,7 @@ export const Navbar = ({ theme, updateTheme }) => {
                     return (
                         <Link
                             key={e.link}
-                            href={e.link}
+                            href={`${linkBase}${e.link}`}
                             className={
                                 activeSection === e.link
                                     ? "link active"
@@ -110,12 +111,6 @@ export const Navbar = ({ theme, updateTheme }) => {
             </div>
 
             <div className={"nav-btns flex align-center justify-end"}>
-                <button
-                    className={"btn nav-blog-btn "}
-                    disabled={true}
-                >
-                    Writing soon
-                </button>
                 <div className="nav-themeSelect">
                     <button
                         type="button"

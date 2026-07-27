@@ -1,30 +1,35 @@
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+
 export const CaseStudyCard = ({ caseStudy }) => {
     return (
-        <article className="case-study-card">
-            <p className="case-study-domain">{caseStudy.domain}</p>
+        <Link
+            href={`/case-studies/${caseStudy.slug}`}
+            className="case-study-card"
+            aria-label={`Read the case study: ${caseStudy.title}`}
+        >
+            <div className="case-study-card-top">
+                <p className="case-study-domain">{caseStudy.eyebrow}</p>
+                {caseStudy.readTime && (
+                    <span className="case-study-readtime">
+                        {caseStudy.readTime}
+                    </span>
+                )}
+            </div>
+
             <h3>{caseStudy.title}</h3>
-            <div className="case-study-section">
-                <strong>Problem</strong>
-                <p>{caseStudy.problem}</p>
-            </div>
-            <div className="case-study-section">
-                <strong>Approach</strong>
-                <p>{caseStudy.approach}</p>
-            </div>
-            <div className="case-study-section">
-                <strong>Tradeoff</strong>
-                <p>{caseStudy.tradeoff}</p>
-            </div>
-            <div className="case-study-section">
-                <strong>Outcome</strong>
-                <p>{caseStudy.outcome}</p>
-            </div>
+            <p className="case-study-summary">{caseStudy.summary}</p>
+
             <div className="case-study-tags">
                 {caseStudy.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                 ))}
             </div>
-        </article>
+
+            <span className="case-study-readmore">
+                Read more <FaArrowRight size={12} />
+            </span>
+        </Link>
     );
 };
 
