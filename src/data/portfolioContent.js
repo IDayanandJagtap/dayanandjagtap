@@ -42,9 +42,9 @@ export const thinkingSignals = [
 ];
 
 export const howIThinkStatements = [
-    "I do not optimize for speed first. I optimize for clarity.",
-    "I think in systems, not isolated functions.",
-    "I design for failure paths before success paths.",
+    "I slow down at the start so I can move fast later — I'd rather get the order of things right than rush in and untangle it afterwards.",
+    "I say the tradeoffs out loud, even the awkward ones, so nothing turns into a nasty surprise three months down the line.",
+    "I'll happily ship something small and solid over something big and shaky. I sleep better that way.",
 ];
 
 export const systemFlow = [
@@ -57,19 +57,19 @@ export const systemFlow = [
 
 export const operatingPrinciples = [
     {
-        title: "Presence over clutter",
+        title: "Clarity before speed",
         description:
-            "The portfolio should feel intentional, not stacked with every line of work I have ever touched.",
+            "I'd rather spend an extra hour making something obvious than ship clever code that no one — including future me — can follow.",
     },
     {
-        title: "Systems over sections",
+        title: "Failure paths first",
         description:
-            "I want the site to read like a mind map of decisions, not a generic resume layout.",
+            "I catch myself asking “what happens when this breaks?” before “does this work?”. Thinking about how things fail early has saved me more times than I can count.",
     },
     {
-        title: "Silence is power",
+        title: "Systems, not features",
         description:
-            "Spacing, restraint, and layered context matter more than decoration.",
+            "I can't help zooming out to the whole picture — the interface, the data, the edges between services. The interesting bugs almost always live in the seams.",
     },
 ];
 

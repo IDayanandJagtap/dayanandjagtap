@@ -10,11 +10,13 @@ const About = ({ theme }) => {
         <section className={`about section-shell ${theme}`} id="thinking">
             <header className="section-heading">
                 <p className="eyebrow">Thinking</p>
-                <h2>How I approach work.</h2>
+                <h2>How I actually work.</h2>
                 <p>
-                    The site is intentionally structured like a thought process:
-                    the way I interpret problems, the systems I build, and the
-                    direction I am moving toward.
+                    I&apos;m happiest when a messy problem finally clicks into
+                    something clear. Before I write a line of code, I want to
+                    understand what a system really needs to do, where it&apos;ll
+                    hurt, and what I&apos;m trading away. Here&apos;s the way I
+                    tend to think.
                 </p>
             </header>
 
@@ -29,7 +31,7 @@ const About = ({ theme }) => {
 
             <div className="thinking-panel">
                 <div>
-                    <h3>How I think</h3>
+                    <h3>A few things I believe</h3>
                     <div className="how-i-think">
                         {howIThinkStatements.map((line) => (
                             <p key={line}>{line}</p>
@@ -37,10 +39,10 @@ const About = ({ theme }) => {
                     </div>
                 </div>
                 <div>
-                    <h3>Signals I keep close</h3>
+                    <h3>Where I love to go deep</h3>
                     <p>
-                        Distributed systems, cloud design, backend depth,
-                        database shape, security, and operational clarity.
+                        The stuff I genuinely enjoy getting my hands dirty with —
+                        and reach for first when a problem gets hard.
                     </p>
                 </div>
                 <div className="signals-list">
