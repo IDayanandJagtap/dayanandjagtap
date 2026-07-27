@@ -7,22 +7,11 @@ import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import ProjectSection from "@/components/ProjectSection";
 import { Navbar } from "@/components/header/Navbar";
-import { useEffect, useState } from "react";
+import { useTheme } from "@/lib/useTheme";
+import { useEffect } from "react";
 
 export default function Page() {
-    const [theme, setTheme] = useState("Dark");
-
-    useEffect(() => {
-        const storedTheme = window.localStorage.getItem("portfolio-theme");
-        if (storedTheme === "Dark" || storedTheme === "Light") {
-            setTheme(storedTheme);
-        }
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.dataset.theme = theme;
-        window.localStorage.setItem("portfolio-theme", theme);
-    }, [theme]);
+    const [theme, setTheme] = useTheme();
 
     useEffect(() => {
         // Setup scroll-triggered animations with Intersection Observer
@@ -53,9 +42,7 @@ export default function Page() {
         };
     }, []);
 
-    const updateTheme = (currTheme) => {
-        setTheme(currTheme);
-    };
+    const updateTheme = setTheme;
 
     return (
         <main className={`portfolio-page theme-${theme}`}>

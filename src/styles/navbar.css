@@ -171,15 +171,6 @@ html[data-theme="Light"] .nav-drawer .theme-chip.active {
     display: none;
 }
 
-.nav-blog-btn {
-    background: transparent;
-    border: 1px solid var(--borderColor);
-    color: var(--mutedColor);
-    font-size: 0.78rem;
-    cursor: not-allowed;
-    padding: 0.45rem 0.85rem;
-}
-
 .nav-themeSelectBtn {
     min-height: 2.3rem;
     min-width: 7.6rem;

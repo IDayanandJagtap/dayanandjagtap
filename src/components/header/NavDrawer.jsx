@@ -8,6 +8,7 @@ export const NavDrawer = ({
     handleOnNavLinkClick,
     navList,
     theme,
+    linkBase = "",
 }) => {
     return (
         <div className={`nav-drawer flex flex-col justify-between align-center ${isOpen ? "open" : ""}`}>
@@ -19,7 +20,7 @@ export const NavDrawer = ({
                     return (
                         <Link
                             key={e.link}
-                            href={e.link}
+                            href={`${linkBase}${e.link}`}
                             className={
                                 activeSection === e.link
                                     ? "link active"

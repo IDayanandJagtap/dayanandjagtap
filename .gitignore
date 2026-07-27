@@ -20,6 +20,9 @@
 .DS_Store
 *.pem
 
+# private source material for case studies (never commit)
+/temp-file-sources
+
 # debug
 npm-debug.log*
 yarn-debug.log*
